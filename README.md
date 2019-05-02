@@ -6,4 +6,4 @@ Each single directory represents a single stand-alone application.
 
 Script and files for visualizing geological and tectonic content of Fennoscandia
 
-
+![Scan_plotcont_MAP](https://user-images.githubusercontent.com/23025878/57081965-174a2300-6cf6-11e9-8e85-34d4c71c302a.png)
