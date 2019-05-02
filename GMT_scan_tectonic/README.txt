@@ -15,3 +15,5 @@ scan_shear_zones.dat
 scan_tectonic.dat        
 >> file including digitized tectonic units of Fennoscandia
 (for more details see header lines in Scan_plotcont.gmt)
+
+![Scan_plotcont_MAP](https://user-images.githubusercontent.com/23025878/57081965-174a2300-6cf6-11e9-8e85-34d4c71c302a.png)
