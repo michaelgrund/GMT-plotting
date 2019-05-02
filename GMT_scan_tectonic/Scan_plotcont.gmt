@@ -48,12 +48,17 @@ projJ=m1:24000000
 # output file
 ps=Scan_plotcont_MAP.ps
 
-#################################
-## plot geographic content first
+###################################################################################################
+##########
+# Fig. 1 # plot geographic content first
+##########
+
 pscoast -J$projJ -R$projR -Bx5 -By5 -Wthinnest -Swhite -Dh -P -K -A20/0/1 > $ps
 
-#################################
-## plot geological units
+###################################################################################################
+##########
+# Fig. 2 # plot "raw" geological units
+##########
 
 # input file with digitised units
 infile=scan_tectonic.dat
@@ -78,13 +83,20 @@ awk '{if ($3 == "Archean" || $2 == "") print $0}' $infile |psxy -J -R -O -K -G$c
 awk '{if ($3 == "Caledonides" || $2 == "") print $0}' $infile |psxy -J -R -O -K -G$col_cale >> $ps
 awk '{if ($3 == "TIB" || $2 == "") print $0}' $infile |psxy -J -R -O -K -G$col_TIB >> $ps
 
-## plot coastlines etc on top of "geological units" with water areas filled white
+###################################################################################################
+##########
+# Fig. 3 # coastlines etc on top of "geological units" with water areas filled white
+##########
+
 pscoast -J -R -Dh -Wthinnest -A20/0/1 -Swhite -O -K >> $ps   
 ## plot again to avoid visible "grid lines" in water areas and add scale bar
 pscoast -J -R -Dh -Wthinnest -A20/0/1 -Swhite -N1/0.55p,- -O -K -Lf8.3/70.3/56/400+lkm+jt >> $ps   
 
-#################################
-## plot shear zones
+###################################################################################################
+##########
+# Fig. 4 # plot shear zones etc.
+##########
+
 infilefaults=scan_shear_zones.dat
 awk 'NR > 4 {print $0}' $infilefaults |psxy -J -R -K -O -W1.1p,black >> $ps  # first line in thin, then plot fault on top thicker
 
@@ -116,8 +128,11 @@ pstext -R -J -F+f14p -O -K -Gwhite@30 <<EOF >>$ps
 EOF
 #======================
 
-#################################
-## legend in right lower corner
+###################################################################################################
+##########
+# Fig. 5 # plot legend in right lower corner
+##########
+
 pslegend -R -J -Dx8.5/0.2/6.58c/2.4c/BL -F+r+plinen+glinen+gwhite+pblack+pthin -O -K << EOF >> $ps
 G 0.1c
 N 2
