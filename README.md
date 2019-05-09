@@ -5,7 +5,7 @@ Collection of GMT (Generic Mapping Tools) scripts and files including digitized 
 - [GMT_scan_split_colorwheel](#p2): visualizing shear wave splitting results (color-coded with respect to source region)
 - [GMT_scan_tectonic](#p3): visualizing geological and tectonic content of Fennoscandia
 
-If you make use of the content in this repository please acknowledge GMT my PhD thesis in whose framework several of the figures were developed:
+If you make use of the content in this repository please acknowledge GMT (e.g. Wessel et al., 2013) as well as my PhD thesis in whose framework several of the figures were developed:
 
 - Grund, M. (2019), Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
 
