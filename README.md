@@ -1,5 +1,5 @@
 # GMT-plotting
-Collection of GMT (Generic Mapping Tools) scripts and files including digitized map content etc. All scripts should run with GMT 5.2.1 or higher. Each directory in this repository represents a single stand-alone application:
+Collection of GMT (Generic Mapping Tools) scripts and files including digitized map content etc. All scripts should run with **GMT 5.2.1** or higher. Each directory in this repository represents a single stand-alone application:
 
 - [GMT_scan_SKS_SKKS_areas](#p1): visualizing of SKS-SKKS pierce point areas in the D" layer
 - [GMT_scan_split_colorwheel](#p2): visualizing shear wave splitting results (color-coded with respect to source region)
