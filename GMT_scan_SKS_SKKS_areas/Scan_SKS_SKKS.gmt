@@ -1,0 +1,214 @@
+#!/bin/bash
+
+gmtset	MAP_GRID_PEN_PRIMARY 0.3p,dimgrey	\
+	PROJ_LENGTH_UNIT	c	\
+	MAP_ANNOT_OBLIQUE	30	\
+	MAP_ANNOT_OFFSET	5p	\
+	MAP_ANNOT_OFFSET_PRIMARY 5p    \
+	MAP_ANNOT_OFFSET_SECONDARY 5p   \
+	COLOR_MODEL	rgb	\
+	FONT_ANNOT_PRIMARY 8p,Helvetica	\
+	FONT_LABEL 8 \
+	MAP_FRAME_TYPE plain \
+	MAP_FRAME_WIDTH 2p \
+	FORMAT_GEO_MAP F \
+	MAP_TICK_LENGTH_PRIMARY 12p \
+	MAP_FRAME_PEN  1.2p,black \
+        MAP_LABEL_OFFSET 5.5p
+        
+#########################################################################################
+# GMT (5.2.1) script to plot pierce point areas of SKS-SKKS in D"
+##########################################################################################
+
+# 2019, Michael Grund (KIT Karlsruhe, Geophysical Institute)
+
+#########################################################################################
+# If you use the content of this script or the accompanying files please acknowledge GMT, 
+# as well as my PhD thesis (DOI: 10.5445/IR/1000091425) in which a modified version of the 
+# generated map is included.
+#########################################################################################
+
+# output file
+psMAP=MapScandi
+
+#########################################################################################
+##########
+# Fig. 1 # plot geographic content first
+##########
+
+# squared map mercator
+projJ="m1:55000000"
+projR=0/40/53/72
+mapframes=SWnE
+colorall=197.6/197.6/197.6
+
+pscoast -Rg -JG20/63.5/4.5i -B15g15 -Dc -G$colorall -A500000 -C$coloral -Wblack -K -P > $psMAP
+pscoast -Rg -JG20/63.5/4.5i -B15g15 -Dc -G$colorall -C$coloral -Wblack -K -O -P >> $psMAP
+
+# plot plate boundaries   
+psxy -J -R PB2002_boundaries_GMTready.txt -W1p,245.7600/204.8000/204.8000 -O -K >> $psMAP
+pscoast -Rg -JG20/63.5/4.5i -B15g15 -Dc -G$colorall -A500000 -Wblack -C$colorall -K -O -P >> $psMAP
+
+#########################################################################################
+##########
+# Fig. 2 # plot raypath from earthquake source locations to station locations in Fennoscandia
+##########
+
+psxy SKS_SKKS_paths_Ddprime.geo -: -R -J -O -K -W1 -Wblack -Gblack -t99  >> $psMAP 
+
+#########################################################################################
+##########
+# Fig. 3 # plot thick circles in red and orange that cover the D" pierce point areas of SKS and SKKS
+##########
+
+# !!! note: the circles are manually adjusted to fit the reuqired areas!!!
+
+SA_centerN=63.5
+SA_centerE=20
+
+psxy -R -J -Wdarkorange -Sc122p -t45 -O -K -W30.5p << EOF >> $psMAP 
+$SA_centerE $SA_centerN
+EOF
+
+psxy -R -J -Wred3  -Sc60p -t45 -O -K -W30.5p << EOF >> $psMAP 
+$SA_centerE $SA_centerN
+EOF
+
+#########################################################################################
+##########
+# Fig. 4 # plot thinner black circles to overlay edges of red and orange circles
+##########
+
+psxy -R -J -Sc152p -O -K -t10 -Wblack -W0.8p  << EOF >> $psMAP 
+$SA_centerE $SA_centerN
+EOF
+psxy -R -J -Sc91p -O -K -t10 -Wblack  -W0.8p  << EOF >> $psMAP  
+$SA_centerE $SA_centerN
+EOF
+psxy -R -J -Sc30p -O -K -t10 -Wblack -W0.8p  << EOF >> $psMAP  
+$SA_centerE $SA_centerN
+EOF
+
+#########################################################################################
+##########
+# Fig. 5 # plot area of zoom-in as well as dashed lines connecting the inset to the main map
+##########
+
+SA_insN=54.5
+SA_insE=5
+
+gmtset MAP_LINE_STEP 0.75p
+
+psxy -R -J -Gblack -SV0c+e+n5.0c+a0 -W2.4,black,6_3:0p -K -N -O -t30 << EOF >> $psMAP
+$SA_insE $SA_insN 131.17 6.4
+EOF
+
+psxy -R -J -Gblack -SV0c+e+n5.0c+a0 -W2.1,black,6_3:0p -K -N -O -t30 << EOF >> $psMAP
+46 72 125.57 7.2
+EOF
+
+psxy -R -J -W1.2,white,6_3:0p -K -N -O -t30 << EOF >> $psMAP
+5 54.5
+-6 72
+46 72
+35 54.5
+5 54.5
+EOF
+
+#########################################################################################
+##########
+# Fig. 6 # add annotations, station marker and an exemplary raypath as white line
+##########
+
+# annotation SKS in red
+pstext -R -J -F+f10p,darkred -Gwhite@30 -TO -O -K <<EOF >> $psMAP
+$SA_centerE 53 SKS
+EOF
+
+# annotation SKKS in orange
+pstext -R -J -F+f10p,darkorange -Gwhite@30  -TO -O -K <<EOF >> $psMAP
+$SA_centerE 41 SKKS
+EOF
+
+# single raypath
+psxy SKS_SKKS_paths_Ddprime_single.geo -: -R -J -O -K -W1 -Wwhite,-- -Wthicker -Gblack   >> $psMAP 
+
+# station marker
+psxy -R -J -St20.5p   -O -K -t5 -Wwhite -Gblue -W1.3p  << EOF >> $psMAP  # path connection
+$SA_centerE $SA_centerN
+EOF
+
+# contients
+pstext -R -J -F+f10p -N -O -K <<EOF >>$psMAP
+21.00 18.38 Africa
+-114.553  53.099 North America
+175 80 North Pole
+#-13.708 47.388 Europe
+EOF
+
+# Asia
+pstext -R -J -F+f10p,Helvetica,black -Gwhite@30 -N -O -K -t30 <<EOF >>$psMAP
+98.255 37.704 Asia
+EOF
+
+# north pole annotation
+pstext -R -J -F+f10p,Helvetica,black -Gwhite@30 -N -O -K <<EOF >>$psMAP
+175 80 North Pole
+EOF
+
+# arrow to north pole
+psxy -R -J -Gblack  -SV1.2c+e+n2.0c+a60 -W10.4,black -K -N -O  << EOF >> $psMAP
+175 82.5 -0.7 .65
+EOF
+
+# epidistance annotation
+pstext -R -J -F+a14+f8p,Helvetica,black -Gwhite@30 -N -O -K <<EOF >>$psMAP
+-40 33 epicentral distance
+EOF
+
+#########################################################################################
+##########
+# Fig. 7 # plot inset with zoom-in map in lower right corner
+##########
+
+# map settings
+projJ="l20/60/16/80/1:20000000"
+projR=3.5/36.5/54/71.5r 
+
+# gridfile
+grd=etopo1_bedrock.grd
+
+mycpt=topo_mod.cpt
+
+gmtset MAP_TICK_LENGTH_PRIMARY 3.5p 
+gmtset MAP_ANNOT_OFFSET_PRIMARY 3p    
+gmtset MAP_ANNOT_OFFSET_SECONDARY 3p   
+
+makecpt -C$mycpt -T-4000/1500/10 -Z > topo_scandi_mod.cpt
+grdimage $grd -JE20/60/5c -R4.5/53.5/45/71.4r -Ctopo_scandi_mod.cpt -I$grd.grad -Bx10g5 -By5g5 -BSE -X3.4i -Y-0.12i -O -K >> $psMAP
+
+# add scale
+pscoast -R -J -B0NW -Dh -A100 -N1 -N3/1.5p,red -Lf3.1/70/70/400+lkm+jt -F+gwhite+r -O -K -t30  >> $psMAP
+pscoast -R -J -B0NW  -Dh -A100 -N1 -N3/1.5p,red -Lf3.1/70/70/400+lkm+jt -O -K >> $psMAP
+
+########################################################################################
+##########
+# Fig. 8 # plot station network and add annotations
+##########
+
+# all stations 
+awk ' {print $2, $3}' sta_coordinates_all.txt | psxy -R -J -K -St0.2c -Wthinner,white  -Gblue -O >> $psMAP
+
+add annotations
+pstext -: -R -J -F+f8p,Helvetica,black -D0.25/-0.25 -Gwhite@30 -O -K << EOF >> $psMAP
+61.38  5.0 Norway
+59.7 14.0 Sweden
+63.1 24.3 Finland
+EOF
+
+########################
+
+ps2pdf $psMAP $psMAP.pdf
+pdfcrop $psMAP.pdf $psMAP.pdf
+
+########################
