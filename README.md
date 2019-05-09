@@ -11,7 +11,7 @@ Content of this repository:
 - [GMT_scan_split_colorwheel](#p2)
 - [GMT_scan_tectonic](#p3)
 
-<a name="#p1"<>/a>
+<a name="p1"></a>
 ### GMT_scan_SKS_SKKS_areas
 
 Script and files for visualizing SKS-SKKS pierce point areas in the D" layer around a network in Fennoscandia (see final figure below).
