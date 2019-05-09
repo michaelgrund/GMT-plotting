@@ -1,15 +1,16 @@
 # GMT-plotting
 Collection of GMT (Generic Mapping Tools) scripts and files including digitized map content etc.
-Each single directory represents a single stand-alone application.
+Each single directory represents a single stand-alone application:
+
+- [GMT_scan_SKS_SKKS_areas](#p1): visualizing of SKS-SKKS pierce point areas in the D" layer
+- [GMT_scan_split_colorwheel](#p2): visualizing shear wave splitting results (color-coded with respect to source region)
+- [GMT_scan_tectonic](#p3): visualizing geological and tectonic content of Fennoscandia
 
 If you make use of the content in this repository please acknowledge my PhD thesis in whose framework several of the figures were developed:
 
 - Grund, M. (2019), Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
 
-Content of this repository:
-- [GMT_scan_SKS_SKKS_areas](#p1)
-- [GMT_scan_split_colorwheel](#p2)
-- [GMT_scan_tectonic](#p3)
+
 
 <a name="p1"></a>
 ### GMT_scan_SKS_SKKS_areas
