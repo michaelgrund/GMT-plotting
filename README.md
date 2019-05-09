@@ -7,7 +7,7 @@ Collection of GMT (Generic Mapping Tools) scripts and files including digitized 
 
 If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**) as well as my PhD thesis in whose framework several of the figures were developed:
 
-- Grund, M. (2019), Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
+- **_Grund, M. (2019)_**, Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
 
 <a name="p1"></a>
 ### GMT_scan_SKS_SKKS_areas
