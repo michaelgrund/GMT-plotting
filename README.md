@@ -19,7 +19,7 @@ Script and files for visualizing SKS-SKKS pierce point areas in the D" layer aro
 ![MapScandi_SKS_SKKS](https://user-images.githubusercontent.com/23025878/57453757-7b756580-7267-11e9-8618-c0f51034ef4b.png)
 
 <a name="p2"></a>
-### GMT_scan_split_colorwheel]
+### GMT_scan_split_colorwheel
 
 Script and files for visualizing shear wave splitting results (color-coded with respect to source region) in Fennoscandia (see final figure below).
 
