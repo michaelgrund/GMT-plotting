@@ -5,6 +5,16 @@ Each single directory represents a single stand-alone application.
 If you make use of the content in this repository please acknowledge my PhD thesis in whose framework several of the figures were developed:
 
 - Grund, M. (2019), Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
+
+### GMT_scan_SKS_SKKS_areas
+
+Script and files for visualizing SKS-SKKS pierce point areas in the D" layer around a network in Fennoscandia (see final figure below).
+
+
+
+
+
+
                         
 ### GMT_scan_tectonic
 
