@@ -1,6 +1,6 @@
 # GMT-plotting
 Collection of GMT (Generic Mapping Tools) scripts and files including digitized map content etc.
-Each single directory represents a single stand-alone application:
+Each directory represents a single stand-alone application:
 
 - [GMT_scan_SKS_SKKS_areas](#p1): visualizing of SKS-SKKS pierce point areas in the D" layer
 - [GMT_scan_split_colorwheel](#p2): visualizing shear wave splitting results (color-coded with respect to source region)
