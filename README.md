@@ -7,9 +7,9 @@ If you make use of the content in this repository please acknowledge my PhD thes
 - Grund, M. (2019), Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
 
 Content of this repository:
--[GMT_scan_SKS_SKKS_areas](#p1)
--[GMT_scan_split_colorwheel](#p2)
--[GMT_scan_tectonic](#p3)
+- [GMT_scan_SKS_SKKS_areas](#p1)
+- [GMT_scan_split_colorwheel](#p2)
+- [GMT_scan_tectonic](#p3)
 
 ### [GMT_scan_SKS_SKKS_areas](#p1)
 
