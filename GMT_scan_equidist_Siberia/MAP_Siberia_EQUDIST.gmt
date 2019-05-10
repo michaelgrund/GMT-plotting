@@ -1,0 +1,209 @@
+#!/bin/bash
+
+gmtset	MAP_GRID_PEN_PRIMARY 0.3p,dimgrey \
+	PROJ_LENGTH_UNIT c \
+	MAP_ANNOT_OBLIQUE 30 \
+	COLOR_MODEL rgb	\
+	FONT_ANNOT_PRIMARY 4p,Helvetica	\
+	FONT_LABEL 8 \
+	PS_MEDIA A4 \
+	MAP_FRAME_TYPE fancy \
+	MAP_FRAME_WIDTH 0.5p \
+	MAP_FRAME_PEN 0.6p    
+
+#########################################################################################
+# GMT (5.2.1) script to plot a map centered on northwestern Siberia as well as an inset
+##########################################################################################
+
+# 2019, Michael Grund (KIT Karlsruhe, Geophysical Institute)
+
+# Required files to run this script are included in the download directory.
+
+#########################################################################################
+# If you use the content of this script or the accompanying files please acknowledge GMT 
+# and my PhD thesis (DOI: 10.5445/IR/1000091425) in which a modified version of the generated 
+# map is included.
+#########################################################################################	
+
+######################################################################################################	
+# outputfile
+
+ps=MAP_Siberia_EQUDIST.ps
+
+######################################################################################################
+##########
+# Fig. 1 # plot basic map centered on northwestern Siberia
+##########
+
+centerN=71.658
+centerE=74.305
+
+map_radi=1.8i
+colorall=197.6/197.6/197.6
+
+pscoast -Rg -JE$centerE/$centerN/160/$map_radi -Dc -C$colorall -Swhite \
+    -G$colorall -K -P -Baf > $ps 
+ 
+# add plate boundaries after Bird (2002) 
+psxy PB2002_boundaries_GMTready.txt -J -R -W0.5p,245.7600/204.8000/204.8000 -O -K >> $ps
+
+# plot dashed circle
+psxy -R -J -SE- -Wblack,3_1:0p -Wthinner -O -K << EOF >> $ps
+$centerE  $centerN  18000
+EOF
+
+######################################################################################################
+##########
+# Fig. 2 # plot raypaths
+##########
+
+transparency=97.5
+colpath=darkorange
+psxy pathlist_SA_2.dat -R -J -Wthinnest -O -K -t$transparency -W$colpath >> $ps  
+
+transparency=80
+colpath=darkblue
+psxy pathlist_RUSSIA.dat  -R -J  -Wthinnest -O -K -t$transparency -W$colpath >> $ps
+
+######################################################################################################
+##########
+# Fig. 3 # plot target area and station locations
+##########
+
+psxy -R -J -Sc8.1p  -Gyellow -O -K -t30 -Wblack -Wthinnest  << EOF >> $ps 
+$centerE $centerN
+EOF
+
+psxy coord_ScanArray.dat -R -J -St1.3p -Gorange -Wblack -W0.01p -O -K >> $ps
+psxy coord_Russia.dat -: -R -J -St1.3p -Gdarkblue -Wblack -W0.01p -O -K >> $ps
+
+######################################################################################################
+##########
+# Fig. 4 # plot event locations and add annotations
+##########
+
+psxy EQall.dat -: -R -J -Sc1.7p  -Gwhite -Wblack -O -K >> $ps 
+
+# annotations
+pstext -R -J -F+f4p -N -O -K <<EOF >>$ps
+21.00 18.38 Africa
+$centerE -75 Antarctica
+-135.553  41.099 North
+-140.553  48.099 America
+102.255 35.704 Asia
+-54.665 -17.154 South America
+138.51 -29.7 Australia
+-13.708 47.388 Europe
+EOF
+
+######################################################################################################
+##########
+# Fig. 5 # plot zoom-in lines
+##########
+ 
+gmtset MAP_LINE_STEP 0.75p
+
+insN=-11
+insE=73.3
+
+# use vectors to generate zoom-in lines
+psxy -R -J -Gblack -SV0c+e+n5.0c+a0 -W2.4,black,3_1:0p -K -N -O -t30 << EOF >> $ps
+$insE $insN 106.75 5
+EOF
+
+insN=155
+
+psxy -R -J -Gblack -Gblack -SV0c+e+n5.0c+a0 -W2.4,black,3_1:0p -K -N -O -t30 << EOF >> $ps
+$insE $insN 70.5 5
+EOF
+
+######################################################################################################
+##########
+# Fig. 6 # add zoom in map and plate boundaries
+##########
+
+equiX=2.05i
+
+pscoast -Rg -JE$centerE/$centerN/80/$map_radi -Dc -C$colorall -Swhite \
+    -G$colorall -X$equiX -K -O -P -Baf >> $ps 
+    
+psxy -J -R PB2002_boundaries_GMTready.txt -W0.5p,245.7600/204.8000/204.8000 -O -K >> $ps
+
+######################################################################################################
+##########
+# Fig. 7 # plot raypaths
+##########
+ 
+# use only suitable USArray stations 
+awk '{if ($1 > 60 ) print($2,$1)}' coord_USArray_Alaska.dat > coord_USArray_Alaska_SUB.dat
+
+transparency=97.5
+colpath=darkorange
+psxy pathlist_SA.dat -R -J -Wthinnest -O -K -t$transparency -W$colpath >> $ps  
+
+transparency=97.5
+colpath=dodgerblue2
+  
+psxy pathlist_AA_temp.dat -: -R -J -Wthinnest -O -K -t$transparency -W$colpath >> $ps 
+psxy pathlist_AA_perm.dat -: -R -J -Wthinnest -O -K -t$transparency -W$colpath >> $ps  
+  
+transparency=94.5
+colpath=darkred
+psxy pathlist_USA.dat -R -J -Wthinnest -O -K -t$transparency -W$colpath >> $ps  
+
+transparency=60.5
+colpath=springgreen3
+psxy pathlist_GREEN.dat -R -J -Wthinnest -O -K -t$transparency -W$colpath >> $ps  
+ 
+######################################################################################################
+##########
+# Fig. 8 # plot event locations, station locations, enlarged target area and add annotations
+##########
+
+psxy EQall.dat -: -R -J -Sc1.7p  -Gwhite -Wblack -O -K >> $ps 
+ 
+#plot stations on top of raypaths
+psxy coord_AlpArray_temp.dat -: -R -J -St2p -Gdodgerblue2 -Wblack -W0.026p -O -K >> $ps  
+psxy coord_AlpArray_perm.dat -: -R -J -St2p -Gdodgerblue2 -Wblack -W0.026p -O -K >> $ps 
+psxy coord_USArray_Alaska_SUB.dat -R -J -St2p -Gred -Wblack -W0.026p -O -K >> $ps
+psxy coord_ScanArray.dat -R -J -St2p  -Gorange -Wblack -W0.026p -O -K >> $ps
+psxy coord_Greenland.dat -: -R -J -St2p -Gspringgreen2 -Wblack -W0.026p -O -K >> $ps 
+  
+# target area
+psxy -R -J -Sc17p -Gyellow -O -K -t30 -Wblack -Wthinnest  << EOF >> $ps  # path connection
+$centerE $centerN
+EOF
+
+# annotations
+pstext -R -J -F+f4p -N -O -K <<EOF >> $ps
+21.00 18.38 Africa
+-100.553  41.099 North America
+102.255 37.704 Asia
+-13.708 47.388 Europe
+EOF
+
+######################################################################################################
+##########
+# Fig. 9 # add legend
+##########
+
+pslegend -R -J -Dx-0.335i/-0.05/1.07c/1.1c/BL -F+r0.5p+pblack+gwhite+p0.5p -t0 -O -K << EOF >> $ps
+G -0.03i
+N 1
+S 0  t 2.5p dodgerblue2 0.13p 0.05i AlpArray
+G 0.02i
+S 0  t 2.5p darkred 0.13p 0.05i USArray
+G 0.02i
+S 0  t 2.5p darkorange 0.13p 0.05i ScanArray
+G 0.02i
+S 0  t 2.5p springgreen2 0.13p 0.05i Greenland
+G 0.02i
+S 0  t 2.5p darkblue 0.13p 0.05i Russia
+G 0.02i
+EOF
+
+########################
+#gv $ps &
+ps2pdf $ps $ps.pdf
+pdfcrop $ps.pdf $ps.pdf
+########################
