@@ -21,6 +21,7 @@ Script and files for visualizing SKS-SKKS pierce point areas in the D" layer aro
 ### GMT_scan_split_equidist_Siberia
 
 Script and files for plotting an equidistant map centered on NW Siberia as well as raypaths from earthquake source locations to different seismic recording networks (see final figure below).
+Used station and event information is freely available for the public  via ......
 
 ![MAP_Siberia](https://user-images.githubusercontent.com/23025878/57537067-cf567c00-7345-11e9-9ab0-68dbdd6d2220.png)
 
