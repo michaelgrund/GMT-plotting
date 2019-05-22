@@ -1,0 +1,398 @@
+#!/bin/bash
+
+gmtset	MAP_GRID_PEN_PRIMARY 0.3p,dimgrey \
+        PS_MEDIA MGcust \
+	PROJ_LENGTH_UNIT c \
+	MAP_ANNOT_OBLIQUE 30 \
+	MAP_ANNOT_OFFSET 5p \
+	MAP_ANNOT_OFFSET_PRIMARY 5p \
+	MAP_ANNOT_OFFSET_SECONDARY 5p \
+	COLOR_MODEL rgb	\
+	FONT_ANNOT_PRIMARY 8p,Helvetica	\
+	FONT_LABEL 8 \
+	MAP_FRAME_TYPE fancy \
+	MAP_FRAME_WIDTH 2p \
+	MAP_FRAME_PEN 1.1p,black \
+	MAP_TICK_LENGTH_PRIMARY 0i
+	
+#########################################################################################
+# GMT (5.2.1) script to reproduce figures published in Grund and Ritter (2019)
+##########################################################################################
+
+# 2019, Michael Grund (KIT Karlsruhe, Geophysical Institute)
+
+# Required files to run this script are included in the download directory. MGcust 
+# is included as custom media format in file << gmt_custom_media.conf >>.
+
+#########################################################################################
+# If you use the content of this script or the accompanying files please acknowledge GMT,
+# our paper (Grund and Ritter, 2019, Geology) and my PhD thesis (DOI: 10.5445/IR/1000091425).
+#########################################################################################	
+
+##############################################################################################
+# initial map parameters
+projJ="l40/60/16/80/1:48000000"
+projR=-30/110/40/80 
+mapframes=SEwn
+
+# define output name
+ps=ScanArray_SKS_SKKS.ps
+
+##############################################################################################
+# prepare gridfiles and colormaps
+
+#.......................................
+# generate subset of GyPSuM model beneath Fennoscandia at 2700 km depth
+
+# the subset GyPSuM_subset_Scand.txt was generated from the files Grid.GyPSuM.S.22.2650-2900km.txt
+# and Grid.LatsLons.1deg which can be downloaded from:
+#   https://ds.iris.edu/ds/products/emc-gypsum/
+
+# GyPSuM model is available as 1x1 degree grid, here extend it to 1.5x1.5
+xyz2grd GyPSuM_subset_Scand.txt -: -Ggrid_GyPSuM.grd -R$projR -I1.5/1.5
+
+#.......................................
+# generate grid for cluster analysis data of Lekic et al. (2012)
+
+# file Lekic_Clustering_LM.txt can be downloaded from:
+#   https://www.geol.umd.edu/facilities/seismology/data/clustering-of-lower-mantle-structure-perm-anomaly/
+
+# generate cluster data as 2x2 degree grid
+xyz2grd Lekic_Clustering_LM.txt -GLekic_cluster.grd -R$projR -I2/2
+
+#.......................................
+# grid for vote map analysis data of Shephard et al. (2017)
+
+# file max_extent_swave_0.5deg_2700_amean.grd can be downloaded from:
+#   http://folk.uio.no/gracees/Shephard_SlabVoteMaps/1_MEAN/
+
+# votemap data is 0.5x0.5 degree grid
+gridSLAB=max_extent_swave_0.5deg_2700_amean.grd
+
+##############################################################################################
+##########
+# Fig. 1 # plot basic content of gridfiles
+##########
+
+#.......................................
+# GyPSuM tomography model
+
+Yshift=4.5i
+
+grdimage grid_GyPSuM.grd -R$projR -J$projJ -Ccmap_gypsum.cpt -E75 -P -K -Y$Yshift > $ps
+
+# make colorbar
+gmtset FONT_ANNOT_PRIMARY 8p,Helvetica	
+gmtset FONT_LABEL 8p                   
+gmtset MAP_ANNOT_OFFSET 0.04i 
+gmtset MAP_TICK_LENGTH_PRIMARY 0.05i
+gmtset MAP_LABEL_OFFSET 3.5p 
+gmtset MAP_ANNOT_OBLIQUE 1
+
+psscale -Ccmap_gypsum.cpt -Dx-0.15i/0.15i+w1.3i/0.1i+h+e -B1 -B+l"dVs in %, 2700 km" -O -K >> $ps
+
+# set parameters back to defaults
+gmtset FONT_ANNOT_PRIMARY 8p,Helvetica	
+gmtset FONT_LABEL 8
+gmtset MAP_ANNOT_OFFSET 5p
+gmtset MAP_TICK_LENGTH_PRIMARY 0p 
+gmtset MAP_LABEL_OFFSET 5.5p
+
+#.......................................
+# cluster analysis after Lekic
+
+Xshift=7.5i
+
+grdimage Lekic_cluster.grd -R$projR -J$projJ -Ccmap_cluster.cpt -X$Xshift -P -K -O >> $ps
+
+psscale -Ccmap_cluster.cpt -Dx-0.15i/0.1i+w1.3i/0.1i+h -B+l"model agreement" -L0.07 -O -K >> $ps
+
+#.......................................
+# vote maps after Shephard
+
+Yshift2=4i
+
+grdimage $gridSLAB -R$projR -J$projJ -Ccmap_votem.cpt -P -K -O -X-$Xshift -Y-$Yshift2 >> $ps
+
+psscale -Ccmap_votem.cpt -Dx-0.15i/0.1i+w1.3i/0.1i+h -B+l"model agreement" -L0.07 -O -K >> $ps
+
+##############################################################################################
+##########
+# Fig. 2 # plot country contours and map boundaries on top, add contours of large structures 
+##########
+
+pscoast -J -R  -B15g0$mapframes -Wthinnest -Df -P -O -K -A10/0/1 -Y$Yshift2 >> $ps
+pscoast -J -R  -B15g0$mapframes -Wthinner -Df -P -O -K -A10/0/1 -Wwhite -X$Xshift >> $ps
+pscoast -J -R  -B15g0$mapframes -Wthinner -Df -P -O -K -A10/0/1 -Wwhite -X-$Xshift -Y-$Yshift2 >> $ps
+pscoast -J -R  -B15g0$mapframes -Wthinnest -Df -P -O -K -A10/0/1 -X$Xshift >> $ps
+
+# plot contours of large structures with lines digitized with Didger(c)
+gmtset PS_LINE_CAP round
+
+col_clustfast=blue
+col_clustslow=red
+width_line=1.7p
+
+awk '{if ($3 == "clusterLEKIC") print $1, $2 }' clusterLEKIC_contours.dat | psxy -J -R -K -O -W$width_line,$col_clustslow,4_0_0_7:0 >> $ps  
+awk '{if ($3 == "Perm_cluster") print $1, $2 }' clusterLEKIC_contours.dat | psxy -J -R -K -O -W$width_line,$col_clustslow,4_0_0_7:0 >> $ps 
+
+psxy clusterSHEP_contours.dat -J -R -K -O -W$width_line,$col_clustfast,4_0_0_7:0 >> $ps  
+
+# Iceland anomaly estimation from He et al. (2015)
+psxy -J -R -SE- -K -O -Gred -Wred -t70 <<EOF>> $ps 
+-13 65 1450
+EOF
+
+psxy -J -R -SE- -K -O -Wred3 -Wthin  <<EOF>> $ps 
+-13 65 1450
+EOF
+
+# annotation Iceland anomaly
+pstext -R -J -F+f8p,red -O -Gwhite@40 -N -K <<EOF >>$ps
+-15.5 68.8 -dVs
+EOF
+
+##############################################################################################
+##########
+# Fig. 3 # plot connecting lines between SKS/SKKS pierce points (available from Geology website)
+##########
+
+infile=SKS_SKKS_GR2019.dat
+outfile=SKS_SKKS_pathconn.dat
+outfile2=SKS_SKKS_pathconn_SI.dat
+
+awk ' {print $1,$2} NR % 2 == 0 { print ">"; }' $infile > $outfile
+# only extract discrepant ones for SI visulization
+awk ' {if ($3 == "yes") print $1,$2} NR % 2 == 0 { print ">"; }' $infile > $outfile2 
+
+# plot connecting lines between SKS/SKKS pierce points
+psxy $outfile -: -R -J -Wblack -O -K -W0.25p -X-$Xshift -Y$Yshift2 >> $ps  
+psxy $outfile -: -R -J -Wblack -O -K -W0.25p -X$Xshift >> $ps  
+psxy $outfile -: -R -J -Wblack -O -K -W0.25p -X-$Xshift -Y-$Yshift2 >> $ps
+psxy $outfile2 -: -R -J -Wblack -O -K -W0.25p -X$Xshift >> $ps
+
+##############################################################################################
+##########
+# Fig. 4 # plot pierce points of non-discrepant SKS-SKKS pairs at CMB depth (available from Geology website)
+##########
+
+awk '{if ($3 == "no" ) print $0}' $infile |psxy -: -R -J -Sc0.10c -Gwhite -Wblack -K -O -W0.6p -X-$Xshift -Y$Yshift2  >> $ps  
+awk '{if ($3 == "no" ) print $0}' $infile |psxy -: -R -J -Sc0.10c -Gwhite -Wblack -K -O -W0.6p -X$Xshift >> $ps  
+awk '{if ($3 == "no" ) print $0}' $infile |psxy -: -R -J -Sc0.10c -Gwhite -Wblack -K -O -W0.6p -X-$Xshift -Y-$Yshift2 >> $ps 
+
+##############################################################################################
+##########
+# Fig. 5 # plot bars of the split phase of discrepant SKS-SKKS pairs (representing phi relative to north and the delay time) 
+########## and add bar legends
+
+bar_ew=0.85p # bar edge width
+bar_fcol=black # bar fill color 
+bar_ecol=white # bar edge color
+
+#.......................................
+# $6*500 scales the bar length based on the measured delay time
+# 70 defines the thickness of the bar
+awk '{if ($3 == "yes" && $4 == "SKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin -Y$Yshift2 >> $ps  
+awk '{if ($3 == "yes" && $4 == "SKKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin >> $ps
+
+# make legend for black bars
+psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -N -O -Wthin <<EOF>> $ps
+83 40 90 500 60
+EOF
+
+# 1 second annotation
+pstext -: -R -J -F+f8p -O -N -K <<EOF >>$ps
+84 40 1 s
+EOF
+
+#.......................................
+awk '{if ($3 == "yes" && $4 == "SKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin -X$Xshift >> $ps  
+awk '{if ($3 == "yes" && $4 == "SKKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin >> $ps
+
+psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -N -O -Wthin <<EOF>> $ps
+83 40 90 500 60
+EOF
+
+pstext -: -R -J -F+f8p -O -N -K <<EOF >>$ps
+84 40 1 s
+EOF
+
+#.......................................
+awk '{if ($3 == "yes" && $4 == "SKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin -X-$Xshift -Y-$Yshift2 >> $ps  
+awk '{if ($3 == "yes" && $4 == "SKKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin >> $ps
+
+psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -N -O -Wthin <<EOF>> $ps
+83 40 90 500 60
+EOF
+
+pstext -: -R -J -F+f8p -O -N -K <<EOF >>$ps
+84 40 1 s
+EOF
+
+#.......................................
+awk '{if ($3 == "yes" && $4 == "SKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin -X$Xshift >> $ps  
+awk '{if ($3 == "yes" && $4 == "SKKS" && $5 != "NULL") print $1, $2, $5, $6*500 ,70}' $infile | psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -O -Wthin >> $ps
+
+psxy -: -R -J -SJ -G$bar_fcol -W$bar_ew,$bar_ecol -K -N -O -Wthin <<EOF>> $ps
+83 40 90 500 60
+EOF
+
+pstext -: -R -J -F+f8p -O -N -K <<EOF >>$ps
+84 40 1 s
+EOF
+
+##############################################################################################
+##########
+# Fig. 6 # plot circles red, orange and SIdiff-values (pierce points) for discrepant SKS-SKKS pairs and add legend 
+########## 
+
+SKScol=red3
+SKKScol=darkorange
+
+awk '{if ($3 == "yes" && $4 == "SKS") print $0}' $infile |psxy -: -R -J -Sc0.19c -G$SKScol -Wblack -K -O -W0.6p -X-$Xshift -Y$Yshift2 >> $ps  
+awk '{if ($3 == "yes" && $4 == "SKKS") print $0}' $infile |psxy -: -R -J -Sc0.19c -G$SKKScol -Wblack -K -O -W0.6p >> $ps  
+
+### legend SKS-SKKS
+pslegend -R -J -Dx0.45/0.95/1.55c/1.1c/BL -F+r2p+pblack+gwhite+p0.8p -O -K << EOF >> $ps
+G 0.01i
+N 1
+S 0.15c c 0.19c $SKScol 0.6p 0.45c SKS
+G 0.15c
+S 0.15c c 0.19c $SKKScol 0.6p 0.45c SKKS
+G 0.02i
+EOF
+
+#.......................................
+awk '{if ($3 == "yes" && $4 == "SKS") print $0}' $infile |psxy -: -R -J -Sc0.19c -G$SKScol -Wblack -K -O -W0.6p -X$Xshift >> $ps 
+awk '{if ($3 == "yes" && $4 == "SKKS") print $0}' $infile |psxy -: -R -J -Sc0.19c -G$SKKScol -Wblack -K -O -W0.6p >> $ps  
+
+pslegend -R -J -Dx0.45/0.95/1.55c/1.1c/BL -F+r2p+pblack+gwhite+p0.8p -O -K << EOF >> $ps
+G 0.01i
+N 1
+S 0.15c c 0.19c $SKScol 0.6p 0.45c SKS
+G 0.15c
+S 0.15c c 0.19c $SKKScol 0.6p 0.45c SKKS
+G 0.02i
+EOF
+
+#.......................................
+awk '{if ($3 == "yes" && $4 == "SKS") print $0}' $infile |psxy -: -R -J -Sc0.19c -G$SKScol -Wblack -K -O -W0.6p -X-$Xshift -Y-$Yshift2 >> $ps 
+awk '{if ($3 == "yes" && $4 == "SKKS") print $0}' $infile |psxy -: -R -J -Sc0.19c -G$SKKScol -Wblack -K -O -W0.6p >> $ps  
+
+pslegend -R -J -Dx0.45/0.95/1.55c/1.1c/BL -F+r2p+pblack+gwhite+p0.8p -O -K << EOF >> $ps
+G 0.01i
+N 1
+S 0.15c c 0.19c $SKScol 0.6p 0.45c SKS
+G 0.15c
+S 0.15c c 0.19c $SKKScol 0.6p 0.45c SKKS
+G 0.02i
+EOF
+
+#.......................................
+# plot circles based on SI difference
+awk '{if ($3 == "yes" ) print $1, $2, $7}' $infile |psxy -: -R -J -Sc0.19c -Ccmap_SIdiff.cpt -Wblack -K -O -W0.6p -X$Xshift >> $ps  
+awk '{if ($3 == "yes" ) print $1, $2, $7}' $infile |psxy -: -R -J -Sc0.19c -Ccmap_SIdiff.cpt -Wblack -K -O -W0.6p >> $ps  
+
+# S-ScS splitting from Wookey and Kendall (2008), two different reference frames are given in the paper, here we use the observation 
+# made at the station that is the same frame like our meausrements. Bar is plotted at the ~ bounce point position of ScS
+colScS=127/255/0
+
+#plot bar with 1.45 s length 1.45*500)
+psxy -: -R -J -SJ -G$colScS -W$bar_ew,black -K -N -O -Wthin <<EOF>> $ps
+72 85 -7 800 45
+EOF
+
+# plot circle at bounce point
+psxy -: -R -J -Sc0.19c -G$colScS -Wblack -W0.6p -K -N -O -Wthin <<EOF>> $ps
+72 85
+EOF
+
+# plot histogram with distribution of SI values
+awk '{if ($3 == "yes") print $7}' $infile > SI_hist_temp.dat
+# for each pair (SKS and SKKS) the SI diff values are included twice,
+# remove doublets
+sort SI_hist_temp.dat | uniq > SI_hist_uni_temp.dat
+
+pshistogram SI_hist_uni_temp.dat -Jx3.2/0.08 -W0.2 -R0/1/0/20  -L1p -X-0.3i -BWSne -Ccmap_SIdiff.cpt -By10+l"counts" -Bxa0.2+l"@~D@~SI" -O -K>> $ps
+
+##############################################################################################
+##########
+# Fig. 7 # add text and arrows for major structures, roseplots and legend
+########## 
+
+Xshifttemp=7.2i
+
+# -C sets distance between text and edge of textbox, -TO generates round corners
+pstext -R$projR -J$projJ -F+f8p -O -K -Gwhite@30 -TO -C0.025i/0.025i  -X-$Xshifttemp -Y$Yshift2 << EOF >> $ps
+50 45 Perm Anomaly
+-10 71.5 Iceland Anomaly
+5 43.5 African LLSVP
+100 55 fast anomaly
+EOF
+
+# arrows from textboxes to area of interest
+psxy -R -J -Gblack -Wblack -SV0.15c+e+n0.03c+a40 -W0.8 -K -O << EOF >> $ps
+50 46 -20 1
+-8 70.3 -170 0.9
+-1.5 41.5 -80 0.7
+EOF
+
+#.......................................
+pstext -R -J -F+f8p -O -K -Gwhite@30  -TO -C0.025i/0.025i  -X$Xshift  << EOF >> $ps
+50 45 Perm Anomaly
+-10 71.5 Iceland Anomaly
+5 43.5 African LLSVP
+EOF
+
+psxy -R -J -Gblack -Wblack -SV0.15c+e+n0.03c+a40 -W0.8 -K -O << EOF >> $ps
+50 46 -20 1
+-8 70.3 -170 0.9
+-1.5 41.5 -80 0.7
+EOF
+
+#.......................................
+pstext -R -J -F+f8p -O -K -Gwhite@30  -TO -C0.025i/0.025i  -X-$Xshift -Y-$Yshift2  << EOF >> $ps
+100 55 fast anomaly
+EOF
+
+#########################################################
+# generate roseplots
+
+MAX_radial=1    # plot radius within roseplot
+radi_rose=1.1c  # radius roseplot on map
+
+# sort in east and west cluster
+awk '{if ($3 == "yes" && $2 > 15 && $5 != "NULL") print $5}' $infile > ROSE_EAST_temp.dat
+awk '{if ($3 == "yes" && $2 < 15 && $5 != "NULL") print $5}' $infile > ROSE_WEST_temp.dat
+
+scale_down=0.125 # scale length down to fit frame of roseplot
+awk '{print 1.2, $1}' ROSE_EAST_temp.dat | psrose -F -L -R0/$MAX_radial/0/360 -S$radi_rose -Z$scale_down -A15 -X12.5i -Y0.75i -Bx25 -By90g90 -B+gwhite -T -Gdarkgray -W0.75p,black -O -K >> $ps
+awk '{print 1.2, $1}' ROSE_EAST_temp.dat | psrose -F -L -R0/$MAX_radial/0/360 -S$radi_rose -Z$scale_down -A15 -T -Gdarkgray -W0.75p,black -O -K >> $ps
+
+scale_down=0.16 # scale length down to fit frame of roseplot
+awk '{print 1.2, $1}' ROSE_WEST_temp.dat | psrose -F -L -R0/$MAX_radial/0/360 -S$radi_rose -Z$scale_down -A15 -X-3.3i -Y-0.35i -Bx25 -By90g90 -B+gwhite -T -Gdarkgray -W0.75p,black -O -K >> $ps
+awk '{print 1.2, $1}' ROSE_WEST_temp.dat | psrose -F -L -R0/$MAX_radial/0/360 -S$radi_rose -Z$scale_down -A15 -T -Gdarkgray -W0.75p,black -O -K >> $ps
+
+# annotation WEST and EAST roseplot
+pstext -R$projR -J$projJ -F+f8p -O -N -K -X-1.5i << EOF >> $ps
+7.4 42.2 West
+68.8 48.3 East
+EOF
+
+# add legend for slow and fast cluster contour
+pslegend -R -J -Dx15/-1/2.55c/1.125c/BL -F+r2p+pblack+gwhite+p0.8p -t0 -O -K << EOF >> $ps
+G 0.01i
+N 1
+S 0.1i - 0.08i - $width_line,$col_clustslow 0.3i slow cluster
+G 0.05i
+S 0.1i - 0.08i - $width_line,$col_clustfast 0.3i fast cluster
+G 0.02i
+EOF
+
+########################
+#gv $ps &
+rm *_temp.dat
+ps2pdf $ps $ps.pdf
+pdfcrop $ps.pdf $ps.pdf
+
+########################
