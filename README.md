@@ -1,6 +1,7 @@
 # GMT-plotting
 Collection of GMT (Generic Mapping Tools) scripts and files including digitized map content etc. All scripts should run with **GMT 5.2.1** or higher. Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
+- [GMT_gen_equidist_EQ](#p00): plotting global seismicity between 1960 and 2019 on equidistant map
 - [GMT_scan_SKS_SKKS_areas](#p1): visualizing of SKS-SKKS pierce point areas in the D" layer
 - [GMT_scan_SKS_SKKS_pierce_points](#p21): reproducing SKS-SKKS pierce point figures of Grund & Ritter (2019), Geology
 - [GMT_scan_split_equidist_Siberia](#p22): plotting an equidistant map centered on NW Siberia (and raypaths)
@@ -10,6 +11,14 @@ Collection of GMT (Generic Mapping Tools) scripts and files including digitized 
 If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**) as well as my PhD thesis in whose framework several of the figures were developed:
 
 - **_Grund, M. (2019)_**, Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
+
+<a name="p00"></a>
+### GMT_gen_equidist_EQ
+
+Script and files for plotting the global seismicity between 01/01/1960 and 01/05/2019 on a map with equidistant projection.
+
+![EQequidistPLOT](https://user-images.githubusercontent.com/23025878/58618395-d9bfc200-82c2-11e9-8432-8299a18c3f33.png)
+
 
 <a name="p1"></a>
 ### GMT_scan_SKS_SKKS_areas
