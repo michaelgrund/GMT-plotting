@@ -15,8 +15,8 @@ If you make use of the content in this repository please acknowledge GMT (e.g. *
 <a name="p00"></a>
 ### GMT_gen_equidist_EQ
 
-Script and files for plotting the global seismicity between 01/01/1960 and 01/05/2019 on a map with equidistant projection.
-The following colormaps are included in the download package:
+Script and files for plotting the global seismicity between 01/01/1960 and 01/05/2019 on a map with equidistant projection (see final figure and alternative color schemes below). Earthquake data is freely available and was downloaded from https://earthquake.usgs.gov.
+Colormaps from (or based on) the following sources are included in the download package:
 
   1) Scientific colormaps by F. Crameri (Zenodo. http://doi.org/10.5281/zenodo.1243862)
     (see and download here: http://www.fabiocrameri.ch/colourmaps.php)
