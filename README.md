@@ -21,7 +21,7 @@ Colormaps from (or based on) the following sources are included in the download 
   1) Scientific colormaps by F. Crameri (Zenodo. http://doi.org/10.5281/zenodo.1243862)
     (see and download here: http://www.fabiocrameri.ch/colourmaps.php)
 
-  2) MatPlotLib colormaps converted to GMT's cpt format (see and download here: http://soliton.vm.bytemark.co.uk/pub/cpt-city/mpl/index.html)
+  2) Matplotlib colormaps converted to GMT's cpt format (see and download here: http://soliton.vm.bytemark.co.uk/pub/cpt-city/mpl/index.html)
 
 
 
@@ -45,8 +45,7 @@ Script and files for visualizing SKS-SKKS pierce point areas in the D" layer aro
 <a name="p22"></a>
 ### GMT_scan_split_equidist_Siberia
 
-Script and files for plotting an equidistant map centered on NW Siberia as well as raypaths from earthquake source locations to different seismic recording networks (see final figure below).
-Used station and event information is freely available for the public  via ......
+Script and files for plotting an equidistant map centered on NW Siberia as well as raypaths from earthquake source locations to different seismic recording networks (see final figure below). Used station and event information is freely available from https://geofon.gfz-potsdam.de/ (ScanArray, Greenland), https://www.fdsn.org/networks/det/ (AlpArray, Russia),  http://ds.iris.edu/ds/nodes/dmc/earthscope/usarray/ (USArray) and https://earthquake.usgs.gov (events). 
 
 ![MAP_Siberia](https://user-images.githubusercontent.com/23025878/57537067-cf567c00-7345-11e9-9ab0-68dbdd6d2220.png)
 
