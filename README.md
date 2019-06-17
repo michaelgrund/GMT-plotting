@@ -5,7 +5,6 @@ Collection of GMT (Generic Mapping Tools) scripts and files including digitized 
 - [GMT_scan_SKS_SKKS_areas](#p1): visualizing of SKS-SKKS pierce point areas in the D" layer
 - [GMT_scan_SKS_SKKS_pierce_points](#p21): reproducing SKS-SKKS pierce point figures of Grund & Ritter (2019), Geology
 - [GMT_scan_split_equidist_Siberia](#p22): plotting an equidistant map centered on NW Siberia (and raypaths)
-- [GMT_scan_split_colorwheel](#p2): visualizing shear wave splitting results (color-coded with respect to source region)
 - [GMT_scan_tectonic](#p3): visualizing geological and tectonic content of Fennoscandia
 
 If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**) as well as my PhD thesis in whose framework several of the figures were developed:
