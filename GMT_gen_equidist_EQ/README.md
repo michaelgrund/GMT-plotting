@@ -8,7 +8,11 @@ Colormaps from (or based on) the following sources are included in the download 
 
   2) Matplotlib colormaps converted to GMT's cpt format (see and download here: http://soliton.vm.bytemark.co.uk/pub/cpt-city/mpl/index.html)
 
+To generate the map (using the viridis colormap) just run the (executable) script via the command line:
 
+```console
+user@seisPC:~$ GMT_EQglob_BFO.gmt
+```
 
 
 
