@@ -1,6 +1,14 @@
 ### GMT_scan_tectonic
 
-Script and files for visualizing geological and tectonic content of Fennoscandia (see final figure below). Content was partly digitised using Didger (R) (Golden Software, LLC) based on the following references:
+Script and files for visualizing geological and tectonic content of Fennoscandia (see final figure below). 
+
+To generate the map just run the (executable) script via the command line:
+
+```console
+user@seisPC:~$ Scan_plotcont.gmt
+```
+
+Map content was partly digitised using Didger (R) (Golden Software, LLC) based on the following references:
 
 Geological units are modified after Fig. 1 of:
 - **Högdahl et al. (2004)**, Geological Survey of Finland, Special Paper 37, The Transscandinavian Igneous Belt (TIB) in Sweden: a review of its character and evolution
