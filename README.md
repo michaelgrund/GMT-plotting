@@ -1,5 +1,5 @@
 # GMT-plotting
-Collection of GMT (Generic Mapping Tools) scripts and files (including digitized map content, colormaps, grid files etc). All scripts should run with **GMT 5.2.1** or higher. Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
+Collection of GMT (Generic Mapping Tools) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with **GMT 5.2.1** or higher. Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
 - [GMT_gen_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map
 - [GMT_gen_seafloor_ages](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_seafloor_ages): plotting the ages of oceanic lithosphere on a global map 
