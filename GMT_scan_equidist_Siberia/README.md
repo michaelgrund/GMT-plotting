@@ -1,4 +1,4 @@
-### GMT_scan_split_equidist_Siberia
+## GMT_scan_split_equidist_Siberia
 
 Script and files for plotting an equidistant map centered on NW Siberia as well as raypaths from earthquake source locations to different seismic recording networks (see final figure below). 
 
