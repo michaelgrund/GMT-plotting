@@ -1,6 +1,6 @@
 ## GMT_gen_seafloor_ages
 
-To generate the map using the viridis colormap just run:
+To generate the map (using the viridis colormap) just run the script via the command line:
 ```shell
 GMT_PLOT_ages.gmt
 
