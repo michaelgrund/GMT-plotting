@@ -1,6 +1,7 @@
 # GMT-plotting
 Collection of GMT (Generic Mapping Tools) scripts and files including digitized map content etc. All scripts should run with **GMT 5.2.1** or higher. Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
+- [GMT_gen_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map
 - [GMT_gen_equidist_EQ](#p00): plotting global seismicity between 1960 and 2019 on equidistant map
 - [GMT_scan_SKS_SKKS_areas](#p1): visualizing of SKS-SKKS pierce point areas in the D" layer
 - [GMT_scan_SKS_SKKS_pierce_points](#p21): reproducing SKS-SKKS pierce point figures of Grund & Ritter (2019), Geology
