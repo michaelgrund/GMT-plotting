@@ -8,4 +8,8 @@ To generate the map just run the (executable) script via the command line:
 user@seisPC:~$ Scan_SKS_SKKS.gmt
 ```
 
+Used station information is freely available from:
+- https://geofon.gfz-potsdam.de/ 
+- https://www.fdsn.org/networks/ 
+
 ![MapScandi_SKS_SKKS](https://user-images.githubusercontent.com/23025878/57453757-7b756580-7267-11e9-8618-c0f51034ef4b.png)
