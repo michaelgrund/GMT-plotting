@@ -1,4 +1,4 @@
-### GMT_scan_SKS_SKKS_areas
+## GMT_scan_SKS_SKKS_areas
 
 Script and files for visualizing _SKS_-_SKKS_ pierce point areas in the D" layer around a network in Fennoscandia (see final figure below).
 
