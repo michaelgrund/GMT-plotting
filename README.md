@@ -3,8 +3,8 @@ Collection of GMT (Generic Mapping Tools) scripts and files (including digitized
 
 - [GMT_gen_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map
 - [GMT_gen_seafloor_ages](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_seafloor_ages): plotting the ages of oceanic lithosphere on a global map 
-- [GMT_scan_SKS_SKKS_areas](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_scan_SKS_SKKS_areas): visualizing of SKS-SKKS pierce point areas in the D" layer
-- [GMT_scan_SKS_SKKS_pierce_points](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_scan_SKS_SKKS_pierce_points): reproducing SKS-SKKS pierce point figures of Grund & Ritter (2019), Geology
+- [GMT_scan_SKS_SKKS_areas](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_scan_SKS_SKKS_areas): visualizing of _SKS_-_SKKS_ pierce point areas in the D" layer
+- [GMT_scan_SKS_SKKS_pierce_points](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_scan_SKS_SKKS_pierce_points): reproducing _SKS_-_SKKS_ pierce point figures of Grund & Ritter (2019), Geology
 - [GMT_scan_split_equidist_Siberia](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_scan_equidist_Siberia): plotting an equidistant map centered on NW Siberia (and raypaths)
 - [GMT_scan_tectonic](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_scan_tectonic): visualizing geological and tectonic content of Fennoscandia
 
