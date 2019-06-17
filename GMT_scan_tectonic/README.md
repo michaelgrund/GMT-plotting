@@ -1,8 +1,6 @@
-### GMT_scan_tectonic
+## GMT_scan_tectonic
 
-Script and files for visualizing geological and tectonic content of Fennoscandia (see final figure below). 
-
-To generate the map just run the (executable) script via the command line:
+Script and files for visualizing geological and tectonic content of Fennoscandia (see final figure below). To generate the map just run the (executable) script via the command line:
 
 ```console
 user@seisPC:~$ Scan_plotcont.gmt
