@@ -13,3 +13,10 @@ If you make use of the content in this repository please acknowledge GMT (e.g. *
 - **_Grund, M. (2019)_**, Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
 
 
+![PLOT_GMT_all](https://user-images.githubusercontent.com/23025878/59599891-f439ce00-90ff-11e9-82be-5e324fbcc893.png)
+
+
+
+
+
+
