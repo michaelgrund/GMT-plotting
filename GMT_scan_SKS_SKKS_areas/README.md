@@ -7,6 +7,10 @@ To generate the map just run the (executable) script via the command line:
 ```console
 user@seisPC:~$ Scan_SKS_SKKS.gmt
 ```
+In general, first you have to make the script executable via:
+```console
+user@seisPC:~$ chmod +x Scan_SKS_SKKS.gmt
+```
 
 Used station information is freely available from:
 - https://geofon.gfz-potsdam.de/ 
