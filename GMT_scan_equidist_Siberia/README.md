@@ -2,7 +2,7 @@
 
 Script and files for plotting an equidistant map centered on NW Siberia as well as raypaths from earthquake source locations to different seismic recording networks (see final figure below). 
 
-To generate the map just run the (executable) script via the command line:
+To generate the map just run the script via the command line:
 
 ```console
 user@seisPC:~$ ./MAP_Siberia_EQUDIST.gmt
