@@ -10,7 +10,7 @@ In general, first you have to make the script executable via:
 user@seisPC:~$ chmod +x GMT_PLOT_ages.gmt
 ```
 
-For further instructions (e.g. how to change the colormap) see the manual. Colormaps from (or based on) the following sources are included in the download package:
+**For further instructions (e.g. how to change the colormap) see the manual (pdf-file)**. Colormaps from (or based on) the following sources are included in the download package:
 
   1) Scientific colormaps by F. Crameri (Zenodo. http://doi.org/10.5281/zenodo.1243862)
     (see and download here: http://www.fabiocrameri.ch/colourmaps.php)
