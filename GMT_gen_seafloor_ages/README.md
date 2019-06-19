@@ -5,6 +5,10 @@ Script and files for plotting the ages of oceanic lithosphere by **_Müller et a
 ```console
 user@seisPC:~$ GMT_PLOT_ages.gmt
 ```
+In general, first you have to make the script executable via:
+```console
+user@seisPC:~$ chmod +x GMT_PLOT_ages.gmt
+```
 
 For further instructions (e.g. how to change the colormap) see the manual. Colormaps from (or based on) the following sources are included in the download package:
 
