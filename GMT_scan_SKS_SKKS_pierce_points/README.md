@@ -5,7 +5,7 @@ Script and files for reproducing _SKS_-_SKKS_ pierce point figures of **_Grund &
 To generate the map just run the (executable) script via the command line:
 
 ```console
-user@seisPC:~$ Scan_SKS_SKKS_figs.gmt
+user@seisPC:~$ ./Scan_SKS_SKKS_figs.gmt
 ```
 In general, first you have to make the script executable via:
 ```console
