@@ -12,6 +12,8 @@ In general, first you have to make the script executable via:
 user@seisPC:~$ chmod +x Scan_SKS_SKKS_figs.gmt
 ```
 
+**Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).**
+
 References:
 
 - **Grund, M. & Ritter, J. R. R. (2019)**, Widespread seismic anisotropy in Earth’s lowermost mantle
