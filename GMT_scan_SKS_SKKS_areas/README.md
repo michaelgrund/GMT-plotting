@@ -5,7 +5,7 @@ Script and files for visualizing _SKS_-_SKKS_ pierce point areas in the D" layer
 To generate the map just run the (executable) script via the command line:
 
 ```console
-user@seisPC:~$ Scan_SKS_SKKS.gmt
+user@seisPC:~$ ./Scan_SKS_SKKS.gmt
 ```
 In general, first you have to make the script executable via:
 ```console
