@@ -3,7 +3,11 @@
 Script and files for visualizing geological and tectonic content of Fennoscandia (see final figure below). To generate the map just run the (executable) script via the command line:
 
 ```console
-user@seisPC:~$ Scan_plotcont.gmt
+user@seisPC:~$ ./Scan_plotcont.gmt
+```
+In general, first you have to make the script executable via:
+```console
+user@seisPC:~$ chmod +x Scan_plotcont.gmt
 ```
 
 Map content was partly digitised using Didger (R) (Golden Software, LLC) based on the following references:
