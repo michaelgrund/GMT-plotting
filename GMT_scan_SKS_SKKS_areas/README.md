@@ -2,7 +2,7 @@
 
 Script and files for visualizing _SKS_-_SKKS_ pierce point areas in the D" layer around a network in Fennoscandia (see final figure below).
 
-To generate the map just run the (executable) script via the command line:
+To generate the map just run the script via the command line:
 
 ```console
 user@seisPC:~$ ./Scan_SKS_SKKS.gmt
