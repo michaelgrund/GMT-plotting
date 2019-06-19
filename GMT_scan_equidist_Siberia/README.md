@@ -11,6 +11,7 @@ In general, first you have to make the script executable via:
 ```console
 user@seisPC:~$ chmod +x MAP_Siberia_EQUDIST.gmt
 ```
+**Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).**
 
 
 Used station and event information is freely available from:
