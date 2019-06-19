@@ -9,6 +9,8 @@ In general, first you have to make the script executable via:
 ```console
 user@seisPC:~$ chmod +x Scan_plotcont.gmt
 ```
+**Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).**
+
 
 Map content was partly digitised using Didger (R) (Golden Software, LLC) based on the following references:
 
