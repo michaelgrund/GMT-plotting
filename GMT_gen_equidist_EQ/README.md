@@ -18,6 +18,6 @@ In general, first you have to make the script executable via:
 user@seisPC:~$ chmod +x GMT_EQglob_BFO.gmt
 ```
 
-Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).
+**Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).**
 
 ![EQequidistPLOT](https://user-images.githubusercontent.com/23025878/58618395-d9bfc200-82c2-11e9-8432-8299a18c3f33.png)
