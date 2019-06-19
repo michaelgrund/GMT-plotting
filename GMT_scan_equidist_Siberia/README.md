@@ -5,7 +5,7 @@ Script and files for plotting an equidistant map centered on NW Siberia as well 
 To generate the map just run the (executable) script via the command line:
 
 ```console
-user@seisPC:~$ MAP_Siberia_EQUDIST.gmt
+user@seisPC:~$ ./MAP_Siberia_EQUDIST.gmt
 ```
 In general, first you have to make the script executable via:
 ```console
