@@ -11,6 +11,8 @@ In general, first you have to make the script executable via:
 ```console
 user@seisPC:~$ chmod +x Scan_SKS_SKKS.gmt
 ```
+**Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).**
+
 
 Used station information is freely available from:
 - https://geofon.gfz-potsdam.de/ 
