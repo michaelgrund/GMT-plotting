@@ -23,3 +23,5 @@ Montpellier, Laboratoire Geosciences, https://doi.org/10.18715/sks_splitting_dat
 - **Wüstefeld, A., Bokelmann, G. H. R., Barruol, G. & Montagner, J.-P. (2009)**, Identifying global
 seismic anisotropy patterns by correlating shear-wave splitting and surface waves data, Phys.
 Earth Planet. Int., 176, 198–212.
+
+![PLOT_GMT_splitDB_ALL](https://user-images.githubusercontent.com/23025878/63431308-dac64280-c41e-11e9-85e2-cc93df520a15.png)
