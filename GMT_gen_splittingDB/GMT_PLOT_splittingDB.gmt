@@ -1,0 +1,92 @@
+#!/bin/bash
+
+gmtset	MAP_GRID_PEN_PRIMARY 0.3p,dimgrey \
+	PROJ_LENGTH_UNIT c \
+	MAP_ANNOT_OBLIQUE 30 \
+	MAP_ANNOT_OFFSET 0.1i \
+	MAP_ANNOT_OFFSET_PRIMARY 5p \
+	MAP_ANNOT_OFFSET_SECONDARY 5p \
+	COLOR_MODEL rgb \
+	FONT_ANNOT_PRIMARY 8p,Helvetica \
+	FONT_LABEL 8p \
+	MAP_FRAME_WIDTH 2p \
+	MAP_FRAME_PEN 1.2p \
+	PS_CHAR_ENCODING Standard+ \
+  MAP_TICK_LENGTH_PRIMARY 0i
+		
+#########################################################################################
+# GMT (5.2.1) script to plot the content of the shear-wave splitting data base
+##########################################################################################
+
+# 2019, Michael Grund (KIT Karlsruhe, Geophysical Institute)
+
+# Required files to run this script are included in the download directory. 
+
+#########################################################################################
+# If you use the content of this script or the accompanying files please acknowledge GMT
+# and my PhD thesis (DOI: 10.5445/IR/1000091425).
+#########################################################################################	
+
+##############################################################################################	
+# define output file name
+outps=PLOT_GMT_splittingDB.ps
+
+# use cyclic colormaps of Fabio Crameri downloaded from: 
+#    
+#       http://www.fabiocrameri.ch/cycliccolourmaps.php
+
+cmap2use=vikO.cpt
+#cmap2use=corkO.cpt
+#cmap2use=brocO.cpt
+
+##############################################################################################
+# data containing the individual shear-wave splitting results were downloaded from:
+#
+#       http://splitting.gm.univ-montp2.fr/DB/
+# 
+
+##############################################################################################
+
+##############################################################################################
+##########
+# Fig. 1 # plot continents
+##########
+
+# add continents, only plot objects with areas larger than 10000 km^2 (-A10000)
+# add annotations and lat/lon gridlines (-Bx... and -By...), only annotate south axis (-BweSn) 
+col_cont=217.6/217.6/217.6
+pscoast -Rd -JN0/3.5i -Dc -G$col_cont -C$col_cont -K -P -A10000 -Bx90g45 -By30g15 -BweSn > $outps 
+
+##############################################################################################
+##########
+# Fig. 2 # plot splits
+##########
+
+# generate colormap based on the input given above
+makecpt -C$cmap2use -T0/360/1 -M -Z > FASTcol.cpt 
+
+# color of bar edges
+bar_edgecol=black
+
+# process the splitting data and plot it as bars (-SJ), color-coded by the fast axis direction
+# between 0 and 360 degrees and scaled by the delay time ($6*250), bar width is 70
+awk 'BEGIN {FS="|"}{"NR > 1"}{if ($3*$3>0 && $6>0 && tolower($5) != "null"  ) print $4, $3, $5, $5, ($6*250), 70}' splittingDB.txt | psxy -R -J -SJ -W0.01p,$bar_edgecol -CFASTcol.cpt -K -O >> $outps
+
+##############################################################################################
+##########
+# Fig. 3 # plot the colorbar
+##########   
+
+# adjust some settings for plotting the scale
+gmtset MAP_ANNOT_OFFSET 0.14i 
+gmtset MAP_TICK_LENGTH_PRIMARY -0.1i
+gmtset MAP_FRAME_PEN 1p 
+
+# plot the bar with annotation, location and size of the bar is defined via -Dx, +h gives 
+# a horizontal bar
+psscale -CFASTcol.cpt -Dx1.3/5.2+w2.5i/0.1i+ml+h -Bxa45+l"Fast axis direction" \
+    -O -K >> $outps   
+
+##########  
+ps2pdf $outps $outps.pdf
+pdfcrop $outps.pdf $outps.pdf
