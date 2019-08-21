@@ -17,7 +17,7 @@ user@seisPC:~$ chmod +x GMT_PLOT_splittingDB.gmt
 
 References:
 
-- **Barruol, G., Wüestefeld, A. & Bokelmann, G. (2009)**, SKS-Splitting-database, Universite de
+- **Barruol, G., Wüstefeld, A. & Bokelmann, G. (2009)**, SKS-Splitting-database, Universite de
 Montpellier, Laboratoire Geosciences, https://doi.org/10.18715/sks_splitting_database.
 
 - **Wüstefeld, A., Bokelmann, G. H. R., Barruol, G. & Montagner, J.-P. (2009)**, Identifying global
