@@ -1,6 +1,6 @@
 ## GMT_gen_splittingDB
 
-Script and files for plotting the content of the shear-wave splitting data base (**_Barruol et al., 2009; Wüstefeld et al., 2009_**) on a global map. To generate the map (using the viridis colormap) just run the script via the command line:
+Script and files for plotting the content of the shear-wave splitting data base (**_Barruol et al., 2009; Wüstefeld et al., 2009_**) on a global map. To generate the map (using the cyclic vikO colormap) just run the script via the command line:
 
 ```console
 user@seisPC:~$ ./GMT_PLOT_splittingDB.gmt
@@ -17,4 +17,9 @@ user@seisPC:~$ chmod +x GMT_PLOT_splittingDB.gmt
 
 References:
 
+- **Barruol, G., Wüestefeld, A. & Bokelmann, G. (2009)**, SKS-Splitting-database, Universite de
+Montpellier, Laboratoire Geosciences, https://doi.org/10.18715/sks_splitting_database.
 
+- **Wüstefeld, A., Bokelmann, G. H. R., Barruol, G. & Montagner, J.-P. (2009)**, Identifying global
+seismic anisotropy patterns by correlating shear-wave splitting and surface waves data, Phys.
+Earth Planet. Int., 176, 198–212.
