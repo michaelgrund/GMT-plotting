@@ -3,7 +3,7 @@ Collection of GMT (Generic Mapping Tools) scripts and files (including digitized
 
 **Update:** from time to time I will add Jupyter Notebooks to each directory in which I use **PyGMT**, a Python interface for GMT (**_Uieda & Wessel, 2017_**) to generate the individual maps and plots.
 
-- [GMT_gen_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ/pygmt_jupyter_notebook)
+- [GMT_gen_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map :arrow_forward:[Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ/pygmt_jupyter_notebook)
 - [GMT_gen_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
 - [GMT_gen_seafloor_ages](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_seafloor_ages): plotting the ages of oceanic lithosphere on a global map 
 - [GMT_gen_splittingDB](https://github.com/michaelgrund/GMT-plotting/tree/master/GMT_gen_splittingDB): plotting the content of the shear-wave splitting data base on a global map
@@ -24,5 +24,5 @@ Final figure outputs of a few examples are shown below. Details and further refe
 
 References
 
-- **Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410.
+- **Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410, https://doi.org/10.1002/2013EO450001
 - **Uieda, L. & Wessel, P. (2017)**,  A modern Python interface for the Generic Mapping Tools. AGU Fall Meeting Abstracts, Abstract IN51B‐0018.
