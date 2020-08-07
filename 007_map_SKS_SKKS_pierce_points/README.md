@@ -1,4 +1,4 @@
-## GMT_scan_SKS_SKKS_pierce_points
+## 007_map_SKS_SKKS_pierce_points
 
 Script and files for reproducing _SKS_-_SKKS_ pierce point figures of **_Grund & Ritter (2019)_**. For further information, results and interpretations, please feel free to read our paper.
 
