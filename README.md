@@ -9,7 +9,7 @@ Collection of GMT (Generic Mapping Tools) scripts and files (including digitized
 - [004_map_splitting_database](https://github.com/michaelgrund/GMT-plotting/tree/master/004_map_splitting_database): plotting the content of the shear-wave splitting data base on a global map
 - [005_map_equidist_siberia](https://github.com/michaelgrund/GMT-plotting/tree/master/005_map_equidist_siberia): plotting an equidistant map centered on NW Siberia (and raypaths)
 - [006_map_SKS_SKKS_areas](https://github.com/michaelgrund/GMT-plotting/tree/master/006_map_SKS_SKKS_areas): visualizing of _SKS_-_SKKS_ pierce point areas in the D" layer
-- [007_map_SKS_SKKS_pierce_points](https://github.com/michaelgrund/GMT-plotting/tree/master/007_map_SKS_SKKS_pierce_points): reproducing _SKS_-_SKKS_ pierce point figures of Grund & Ritter (2019), Geology
+- [007_map_SKS_SKKS_pierce_points](https://github.com/michaelgrund/GMT-plotting/tree/master/007_map_SKS_SKKS_pierce_points): reproducing _SKS_-_SKKS_ pierce point figures of **_Grund & Ritter (2019)_**, Geology
 - [008_map_scan_tectonic](https://github.com/michaelgrund/GMT-plotting/tree/master/008_map_scan_tectonic): visualizing geological and tectonic content of Fennoscandia :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/008_map_scan_tectonic/pygmt_jupyter_notebook)
 
 If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**) as well as my PhD thesis in whose framework several of the figures were developed:
