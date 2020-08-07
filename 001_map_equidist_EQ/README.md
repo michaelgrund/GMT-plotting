@@ -1,4 +1,4 @@
-## GMT_gen_equidist_EQ
+## 001_map_equidist_EQ
 
 Script and files for plotting the global seismicity between 01/01/1960 and 01/05/2019 on a map with equidistant projection (see final figure and alternative color schemes below). Earthquake data is freely available and was downloaded from https://earthquake.usgs.gov.
 Colormaps from (or based on) the following sources are included in the download package:
