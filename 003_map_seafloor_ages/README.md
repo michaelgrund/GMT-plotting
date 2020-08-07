@@ -1,4 +1,4 @@
-## GMT_gen_seafloor_ages
+## 003_map_seafloor_ages
 
 Script and files for plotting the ages of oceanic lithosphere by **_Müller et al. (2008)_** on a global map. To generate the map (using the viridis colormap) just run the script via the command line:
 
