@@ -1,4 +1,4 @@
-## GMT_gen_equidist_EQ_GCMT
+## 002_map_equidist_EQ_GCMT
 
 Script and files for plotting the focal mechanisms of the global seismicity between 28/01/1964 and 31/01/2019 on a map with equidistant projection (see final figure below). 
 Earthquake data is freely available and was downloaded from the International Seismological Centre (ICS, http://www.isc.ac.uk).
