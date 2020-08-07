@@ -1,4 +1,4 @@
-## GMT_scan_tectonic
+## 008_map_scan_tectonic
 
 Script and files for visualizing geological and tectonic content of Fennoscandia (see final figure below). To generate the map just run the script via the command line:
 
