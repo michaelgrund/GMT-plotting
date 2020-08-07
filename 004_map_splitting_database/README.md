@@ -1,4 +1,4 @@
-## GMT_gen_splittingDB
+## 004_map_splitting_database
 
 Script and files for plotting the content of the shear-wave splitting data base (**_Barruol et al., 2009; Wüstefeld et al., 2009_**) on a global map. To generate the map (using the cyclic vikO colormap) just run the script via the command line:
 
