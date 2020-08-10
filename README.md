@@ -26,4 +26,4 @@ References
 
 - **Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410, https://doi.org/10.1002/2013EO450001
 - **Uieda, L. & Wessel, P. (2017)**,  A modern Python interface for the Generic Mapping Tools. AGU Fall Meeting Abstracts, Abstract IN51B‐0018.
-- **Uieda, L., Tian, D., Leong, W. J., Toney, L. & Wessel, P. (2020)**, PyGMT: A Python interface for the Generic Mapping Tools, v0.1.0, Zenodo, doi:10.5281/zenodo.3782862.
+- **Uieda, L., Tian, D., Leong, W. J., Toney, L. & Wessel, P. (2020)**, PyGMT: A Python interface for the Generic Mapping Tools, v0.1.0, Zenodo, https://doi.org/10.5281/zenodo.3782862.
