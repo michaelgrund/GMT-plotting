@@ -1,7 +1,7 @@
 # GMT-plotting
 Collection of GMT (Generic Mapping Tools) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with **GMT 5.2.1** or higher. Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
-**Update:** from time to time I will add Jupyter Notebooks to each directory in which I use **PyGMT**, a Python interface for GMT (**_Uieda & Wessel, 2017_** & **_Uieda et al., 2020_**) to generate the individual maps and plots (see the :arrow_forward: symbol).
+**Update:** from time to time I will add Jupyter Notebooks to each directory in which I use **PyGMT**, a Python interface for GMT (**_Uieda & Wessel, 2017_**, **_Uieda et al., 2020_**) to generate the individual maps and plots (see the :arrow_forward: symbol).
 
 - [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
 - [002_map_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/002_map_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
