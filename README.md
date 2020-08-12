@@ -10,7 +10,6 @@ Collection of GMT (Generic Mapping Tools) scripts and files (including digitized
 - [005_map_equidist_siberia](https://github.com/michaelgrund/GMT-plotting/tree/master/005_map_equidist_siberia): plotting an equidistant map centered on NW Siberia (and raypaths)
 - [006_map_SKS_SKKS_areas](https://github.com/michaelgrund/GMT-plotting/tree/master/006_map_SKS_SKKS_areas): visualizing of _SKS_-_SKKS_ pierce point areas in the D" layer
 - [007_map_SKS_SKKS_pierce_points](https://github.com/michaelgrund/GMT-plotting/tree/master/007_map_SKS_SKKS_pierce_points): reproducing _SKS_-_SKKS_ pierce point figures of **_Grund & Ritter (2019)_**, Geology (https://doi.org/10.1130/G45514.1)
-
 - [008_map_scan_tectonic](https://github.com/michaelgrund/GMT-plotting/tree/master/008_map_scan_tectonic): visualizing geological and tectonic content of Fennoscandia :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/008_map_scan_tectonic/pygmt_jupyter_notebook/pygmt_map_tectonic_fenno.ipynb)
 - [009_paper_GR2020](https://github.com/michaelgrund/GMT-plotting/tree/master/009_paper_GR2020): :arrow_forward: Jupyter Notebooks to reproduce some figures presented in our paper **_Grund & Ritter (2020)_**, GJI (https://doi.org/10.1093/gji/ggaa388)
 
