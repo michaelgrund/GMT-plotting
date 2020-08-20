@@ -13,7 +13,9 @@ Collection of GMT (Generic Mapping Tools) scripts and files (including digitized
 - [008_map_scan_tectonic](https://github.com/michaelgrund/GMT-plotting/tree/master/008_map_scan_tectonic): visualizing geological and tectonic content of Fennoscandia :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/008_map_scan_tectonic/pygmt_jupyter_notebook/pygmt_map_tectonic_fenno.ipynb)
 - [009_paper_GR2020](https://github.com/michaelgrund/GMT-plotting/tree/master/009_paper_GR2020): :arrow_forward: Jupyter Notebooks to reproduce some figures presented in our paper **_Grund & Ritter (2020)_**, GJI (https://doi.org/10.1093/gji/ggaa388)
 
-If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**) as well as my PhD thesis in whose framework several of the figures were developed:
+If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**), our paper published in GJI and/or my PhD thesis in whose framework several of the scripts and functions were developed:
+
+- **_Grund, M. & Ritter, J.R.R. (2020)_**, Shear-wave splitting beneath Fennoscandia - Evidence for dipping structures and laterally varying multi-layer anisotropy, Geophysical Journal International, https://doi.org/10.1093/gji/ggaa388
 
 - **_Grund, M. (2019)_**, Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425 
 
