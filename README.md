@@ -15,7 +15,7 @@ Collection of GMT (Generic Mapping Tools) scripts and files (including digitized
 
 If you make use of the content in this repository please acknowledge GMT (e.g. **_Wessel et al., 2013_**), our papers published in Geology and GJI and/or my PhD thesis in whose framework several of the scripts and notebooks were developed:
 
-- **_Grund, M. & Ritter, J.R.R. (2020)_**, Shear-wave splitting beneath Fennoscandia - Evidence for dipping structures and laterally varying multi-layer anisotropy, Geophysical Journal International, https://doi.org/10.1093/gji/ggaa388
+- **_Grund, M. & Ritter, J.R.R. (2020)_**, Shear-wave splitting beneath Fennoscandia - Evidence for dipping structures and laterally varying multilayer anisotropy, Geophysical Journal International, 223, 1525–1547, https://doi.org/10.1093/gji/ggaa388
 
 - **_Grund, M. & Ritter, J.R.R. (2019)_**, Widespread seismic anisotropy in Earth’s lowermost mantle beneath the Atlantic and Siberia, Geology, 47(2), 123–126, 
 https://doi.org/10.1130/G45514.1
