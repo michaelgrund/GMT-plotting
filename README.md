@@ -1,7 +1,7 @@
 # GMT-plotting
 Collection of **GMT** ([Generic Mapping Tools](https://www.generic-mapping-tools.org/)) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with GMT versions **>= 5.2.1** and **< 6.0.0** . Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
-Some directories include Jupyter Notebooks in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT (**_Uieda & Wessel, 2017_**, **_Uieda et al., 2021_**) to generate the individual maps and plots (see the :arrow_forward: symbol).
+Some directories include Jupyter Notebooks in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Uieda et al., 2022_**](https://doi.org/10.5281/zenodo.6426493)) to generate the individual maps and plots (see the :arrow_forward: symbol).
 
 - [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
 - [002_map_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/002_map_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
@@ -33,4 +33,4 @@ References
 - **Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)**, The generic mapping tools version 6. Geochemistry, Geophysics, Geosystems, 20(11), 5556-5564, https://doi.org/10.1029/2019GC008515.
 - **Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410, https://doi.org/10.1002/2013EO450001.
 - **Uieda, L. & Wessel, P. (2017)**,  A modern Python interface for the Generic Mapping Tools. AGU Fall Meeting Abstracts, Abstract IN51B‐0018.
-- **Uieda, L., Tian, D., Leong, W. J., Schlitzer, W., Toney, L., Grund, M., Jones, M., Yao, J., Materna, K., Newton, T., Anant, A., Ziebarth, M., Magen, Y., Wessel, P. (2021)**, PyGMT: A Python interface for the Generic Mapping Tools, v0.3.1, Zenodo, https://doi.org/10.5281/zenodo.5162003.
+- **Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2022)**, PyGMT: A Python interface for the Generic Mapping Tools, v0.6.1, Zenodo, https://doi.org/10.5281/zenodo.6426493.
