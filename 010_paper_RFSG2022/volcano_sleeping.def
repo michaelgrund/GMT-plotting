@@ -1,0 +1,12 @@
+#	$Id: volcano.def,v 1.5 2004/04/13 21:32:27 pwessel Exp $
+#
+#	Definition file for a volcano symbol
+#	To be used with psxy as -Skvolcano/<size>.
+#	The symbol will be painted and drawn given the
+#	-G -L -W options on the psxy command line.
+#
+-0.5	-0.5	M
+-0.2	0	D
+-0.1	0.173205081	0.4	240	300	A
+0.3	-0.5	D
+-0.5	-0.5	D
