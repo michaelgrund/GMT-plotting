@@ -18,7 +18,7 @@ Some directories include Jupyter Notebooks in which I use [**PyGMT**](https://ww
 
 If you make use of the content in this repository please acknowledge GMT (e.g. [**_Wessel et al., 2013_**](https://doi.org/10.1002/2013EO450001); [**_2019_**](https://doi.org/10.1029/2019GC008515)), PyGMT ([**_Uieda et al., 2022_**](https://zenodo.org/record/6702566#.YveVDRzP02w)), our published papers and/or my PhD thesis in whose framework several of the scripts and notebooks were developed:
 
-- **_Ritter, J.R.R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)_**, Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures, Journal of Seismology, https://doi.org/10.1007/s10950-022-10112-w.
+- **_Ritter, J.R.R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)_**, Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures, Journal of Seismology, 26, 1137-1156, https://doi.org/10.1007/s10950-022-10112-w.
 
 - **_Grund, M. & Ritter, J.R.R. (2020)_**, Shear-wave splitting beneath Fennoscandia - Evidence for dipping structures and laterally varying multilayer anisotropy, Geophysical Journal International, 223, 1525–1547, https://doi.org/10.1093/gji/ggaa388.
 
