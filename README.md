@@ -3,7 +3,7 @@ Collection of **GMT** ([Generic Mapping Tools](https://www.generic-mapping-tools
 
 Some directories include Jupyter Notebooks in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Uieda et al., 2022_**](https://zenodo.org/record/6702566#.YveVDRzP02w)) to generate the individual maps and plots (see the :arrow_forward: symbol).
 
-- [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2019 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
+- [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2023 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
 - [002_map_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/002_map_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
 - [003_map_seafloor_ages](https://github.com/michaelgrund/GMT-plotting/tree/master/003_map_seafloor_ages): plotting the ages of oceanic lithosphere on a global map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/003_map_seafloor_ages/pygmt_jupyter_notebook/pygmt_seafloor_ages.ipynb)
 - [004_map_splitting_database](https://github.com/michaelgrund/GMT-plotting/tree/master/004_map_splitting_database): plotting the content of the shear-wave splitting data base on a global map
