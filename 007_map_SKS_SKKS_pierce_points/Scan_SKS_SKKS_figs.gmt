@@ -162,7 +162,7 @@ outfile=SKS_SKKS_pathconn.dat
 outfile2=SKS_SKKS_pathconn_SI.dat
 
 awk ' {print $1,$2} NR % 2 == 0 { print ">"; }' $infile > $outfile
-# only extract discrepant ones for SI visulization
+# only extract discrepant ones for SI visualization
 awk ' {if ($3 == "yes") print $1,$2} NR % 2 == 0 { print ">"; }' $infile > $outfile2 
 
 # plot connecting lines between SKS/SKKS pierce points
