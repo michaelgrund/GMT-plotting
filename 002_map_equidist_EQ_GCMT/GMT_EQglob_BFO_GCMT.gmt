@@ -45,7 +45,7 @@ cmap2use=viridis.cpt
 
 OUTFILE=ICS_EQs.dat
 
-# The file <<< ICS_EQs.dat >>> is alread available in the download package. If you want to 
+# The file <<< ICS_EQs.dat >>> is already available in the download package. If you want to
 # modify the event dates or criteria just uncomment the following lines:
 
 #SITE="http://www.isc.ac.uk/cgi-bin/web-db-v4"
@@ -114,8 +114,8 @@ mapproject datextr_gcmt_tmp.dat -R -J -G$centerE/$centerN  > datproj_gcmt_tmp.da
 awk '{print($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$15/1000/111.111)}' datproj_gcmt_tmp.dat \
     > epidistDEG_gcmt.dat
 
-# (D) define a continous (-Z) colormap based on the viridis.cpt given above (-C) for depths between
-# 0 and 600 km with steps of 100 km, -M affects that the defined colors for fore and background 
+# (D) define a continuous (-Z) colormap based on the viridis.cpt given above (-C) for depths between
+# 0 and 600 km with steps of 100 km, -M affects that the defined colors for fore- and background
 # are used (see gmtset settings in the beginning of the file COLOR_BACKGROUND and COLOR_FOREGROUND),
 # thus event locations deeper 600 km are plotted in dark red.
 makecpt -C$cmap2use -T0/600/100 -M -Z > EQdepths.cpt 

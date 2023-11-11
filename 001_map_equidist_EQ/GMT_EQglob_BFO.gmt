@@ -75,8 +75,8 @@ cmap2use=viridis.cpt
 
 OUTFILE=usgs_EQs.dat
 
-# The file <<< usgs_EQs.dat >>> is alread available in the download package. If you want to 
-# modifiy the event dates or criteria just uncomment the following lines:
+# The file <<< usgs_EQs.dat >>> is already available in the download package. If you want to
+# modify the event dates or criteria just uncomment the following lines:
 
 #SITE="https://earthquake.usgs.gov/fdsnws/event/1/query.csv"
 #TIME="starttime=1960-01-01%2000:00:00&endtime=2019-05-01%2000:00:00"
@@ -136,8 +136,8 @@ mapproject datextr_tmp.dat -R -J -G$centerE/$centerN  > datproj_tmp.dat
 # of file <<< epidistDEG.dat >>>
 awk '{print($1,$2,$3,$4,$5/1000/111.111)}' datproj_tmp.dat  > epidistDEG.dat
 
-# define a continous (-Z) colormap based on the viridis.cpt given above (-C) for depths between
-# 0 and 600 km with steps of 100 km, -M affects that the defined colors for fore and background 
+# define a continuous (-Z) colormap based on the viridis.cpt given above (-C) for depths between
+# 0 and 600 km with steps of 100 km, -M affects that the defined colors for fore- and background
 # are used (see gmtset settings in the beginning of the file COLOR_BACKGROUND and 
 # COLOR_FOREGROUND), thus event locations deeper 600 km are plotted in dark red.
 makecpt -C$cmap2use -T0/600/100 -M -Z > EQdepths.cpt 
@@ -170,7 +170,7 @@ $centerE  $centerN  31080
 EOF
 
 # annotation at 70 and 140 degrees (\217 gives the degree symbol, see PS_CHAR_ENCODING in 
-# gmtset in the beginning of the file
+# gmtset in the beginning of the file)
 pstext -R -J -F+f7p -O -K <<EOF >>$outps
 9 -14.5 70\217
 9 -84 140\217
