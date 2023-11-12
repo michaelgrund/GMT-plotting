@@ -64,7 +64,7 @@ cmap2use=viridis.cpt
 
 
 # inferno_mod.cpt, magma_mod.cpt and plasma_mod.cpt are slightly modified versions of 
-# inferno.cpt, magma.cpt and plasma.cpt that can be also download from: 
+# inferno.cpt, magma.cpt and plasma.cpt that can be also downloaded from:
 #
 #            http://soliton.vm.bytemark.co.uk/pub/cpt-city/mpl/
 
@@ -126,7 +126,7 @@ EOF
 ##########
 
 # PREPARE DATA
-# only use coordinates, depths, magnitudes from the download data and add separator
+# only use coordinates, depths, magnitudes from the downloaded data and add separator
 awk -F',' 'NR > 1 {print($3,$2,$4,$5 "\n>")}' $OUTFILE > datextr_tmp.dat
 
 # calculate the distance for each point to map center (given in km)

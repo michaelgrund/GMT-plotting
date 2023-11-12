@@ -102,7 +102,7 @@ EOF
 ##########
 
 # PREPARE DATA
-# (A) only use lon lat depth str dip slip str dip slip mant exp plon plat and agency from the download data 
+# (A) only use lon lat depth str dip slip str dip slip mant exp plon plat and agency from the downloaded data
 awk -F',' 'NR > 29 {print $6,$5,$7,$20,$21,$22,$23,$24,$25,exp($12/1.7)*0.047,0,0,0,$9}' \
     $OUTFILE > datextr_gcmt_tmp.dat
 
