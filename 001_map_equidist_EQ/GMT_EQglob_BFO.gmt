@@ -87,7 +87,7 @@ OUTFILE=usgs_EQs.dat
 
 ##############################################################################################
 ##########
-# Fig. 1 # plot continents and plate boundaries after Bird (2002)
+# Fig. 1 # plot continents and plate boundaries after Bird (2003)
 ##########
 
 # define the size of the map
@@ -103,7 +103,7 @@ col_cont=217.6/217.6/217.6
 pscoast -Rg -JE$centerE/$centerN/$map_horz/$map_radi -Dc -G$col_cont -Swhite \
     -C$col_cont -K -P -Baf > $outps 
  
-# plot plate boundaries after Bird (2002) in light red that are stored 
+# plot plate boundaries after Bird (2003) in light red that are stored
 # in file <<< PB2002_boundaries_GMTready.txt >>>
 col_plb=245.7600/204.8000/204.8000
 psxy -J -R PB2002_boundaries_GMTready.txt -W0.5p,$col_plb -O -K >> $outps
