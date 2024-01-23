@@ -29,7 +29,7 @@ https://doi.org/10.1130/G45514.1.
 
 ---
 
-**Although I now work outside of academia as a [data scientist](https://innoplexia.com/das-team/), I provide these GMT/PyGMT examples and notebooks in the hope that they will be useful for other students, scientists or interested map creators.**
+**Although I now work outside of academia as a data scientist, I provide these GMT/PyGMT examples and notebooks in the hope that they will be useful for other students, scientists or interested map creators.**
 
 Final figure outputs of a few examples are shown below. Details and further references can be found in the individual directories. 
 
