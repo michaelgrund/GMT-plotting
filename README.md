@@ -1,7 +1,10 @@
 # GMT-plotting
+> [!NOTE]  
+> Updates for PyGMT based notebooks are carried out at irregular intervals. The GMT bash scripts are not maintained anymore.
+
 Collection of **GMT** ([Generic Mapping Tools](https://www.generic-mapping-tools.org/)) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with GMT versions **>= 5.2.1** and **< 6.0.0** . Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
-Some directories include Jupyter Notebooks in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Uieda et al., 2023_**](https://zenodo.org/record/7772533)) to generate the individual maps and plots (see the :arrow_forward: symbol).
+Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Uieda et al., 2023_**](https://zenodo.org/record/7772533)) to generate the individual maps and plots (see the :arrow_forward: symbol).
 
 - [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2023 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
 - [002_map_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/002_map_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
@@ -29,7 +32,7 @@ https://doi.org/10.1130/G45514.1.
 
 ---
 
-**Although I now work outside of academia as a [data scientist](https://innoplexia.com/das-team/), I provide these GMT/PyGMT examples and notebooks in the hope that they will be useful for other students, scientists or interested map creators.**
+**Although I now work outside of academia as a data scientist, I provide these GMT/PyGMT examples and notebooks in the hope that they will be useful for other students, scientists or interested map creators.** 
 
 Final figure outputs of a few examples are shown below. Details and further references can be found in the individual directories. 
 
