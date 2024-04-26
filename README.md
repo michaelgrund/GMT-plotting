@@ -1,6 +1,9 @@
 # GMT-plotting
 > [!NOTE]  
 > Updates for PyGMT based notebooks are carried out at irregular intervals. The GMT bash scripts are not maintained anymore.
+> 
+> Did you find a bug or have suggestions for improvements? Simply open a new [issue](https://github.com/michaelgrund/GMT-plotting/issues) or [pull request](https://github.com/michaelgrund/GMT-plotting/pulls).
+
 
 Collection of **GMT** ([Generic Mapping Tools](https://www.generic-mapping-tools.org/)) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with GMT versions **>= 5.2.1** and **< 6.0.0** . Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
