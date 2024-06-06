@@ -7,7 +7,7 @@
 
 Collection of **GMT** ([Generic Mapping Tools](https://www.generic-mapping-tools.org/)) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with GMT versions **>= 5.2.1** and **< 6.0.0** . Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
-Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Tian et al., 2024_**](https://zenodo.org/records/10578540)) to generate the individual maps and plots (see the :arrow_forward: symbol).
+Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Tian et al., 2024_**](https://zenodo.org/records/11062720)) to generate the individual maps and plots (see the :arrow_forward: symbol).
 
 - [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2023 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
 - [002_map_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/002_map_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
@@ -22,7 +22,7 @@ Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I us
 
 ---
 
-If you make use of the content in this repository please acknowledge GMT (e.g. [**_Wessel et al., 2013_**](https://doi.org/10.1002/2013EO450001); [**_2019_**](https://doi.org/10.1029/2019GC008515)), PyGMT ([**_Tian et al., 2024_**](https://zenodo.org/records/10578540)), our published papers and/or my PhD thesis in whose framework several of the scripts and notebooks were developed:
+If you make use of the content in this repository please acknowledge GMT (e.g. [**_Wessel et al., 2013_**](https://doi.org/10.1002/2013EO450001); [**_2019_**](https://doi.org/10.1029/2019GC008515)), PyGMT ([**_Tian et al., 2024_**](https://zenodo.org/records/11062720)), our published papers and/or my PhD thesis in whose framework several of the scripts and notebooks were developed:
 
 - **_Ritter, J.R.R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)_**, Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures, Journal of Seismology, 26, 1137-1156, https://doi.org/10.1007/s10950-022-10112-w.
 
@@ -45,6 +45,6 @@ Final figure outputs of a few examples are shown below. Details and further refe
 
 ### References
 
-- **_Tian, D., Uieda, L., Leong, W. J., Schlitzer, W., Fröhlich, Y., Grund, M., Jones, M., Toney, L., Yao, J., Magen, Y., Jing-Hui, T., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2024)_**, PyGMT: A Python interface for the Generic Mapping Tools, v0.11.0, Zenodo, https://zenodo.org/records/10578540.
+- **_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Magen, Y., Jing-Hui, T., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2024)_**, PyGMT: A Python interface for the Generic Mapping Tools, v0.12.0, Zenodo, https://zenodo.org/records/11062720.
 - **_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**, The generic mapping tools version 6. Geochemistry, Geophysics, Geosystems, 20(11), 5556-5564, https://doi.org/10.1029/2019GC008515.
 - **_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)_**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410, https://doi.org/10.1002/2013EO450001.
