@@ -13,7 +13,7 @@ user@seisPC:~$ chmod +x MAP_Siberia_EQUDIST.gmt
 ```
 **Detailed information and instructions for the individual steps to generate the final figure can be found in the manual (pdf-file).**
 
-An equivalent Python scripts using PyGMT can be found at
+Equivalent Python scripts using PyGMT can be found at
 [009_deepdyn/03_scanarray/01_epidist_rays](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn/03_scanarray/01_epidist_rays).
 
 Used station and event information is freely available from:
