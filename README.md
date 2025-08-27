@@ -7,7 +7,7 @@
 
 Collection of **GMT** ([Generic Mapping Tools](https://www.generic-mapping-tools.org/)) scripts and files (including digitized map content, colormaps, grid files etc.). All scripts should run with GMT versions **>= 5.2.1** and **< 6.0.0** . Each directory in this repository represents a single stand-alone application (individual manuals in pdf format are included as well):
 
-Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Tian et al., 2025_**](https://zenodo.org/records/15628725)) to generate the individual maps and plots (see the :arrow_forward: symbol).
+Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I use [**PyGMT**](https://www.pygmt.org), a Python interface for GMT ([**_Tian et al., 2025_**](https://zenodo.org/records/15628725)) to generate the individual maps and plots (see the :arrow_forward: symbol and the examples below).
 
 - [001_map_equidist_EQ](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ): plotting global seismicity between 1960 and 2025 on equidistant map :arrow_forward: [Jupyter Notebook](https://github.com/michaelgrund/GMT-plotting/tree/master/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb)
 - [002_map_equidist_EQ_GCMT](https://github.com/michaelgrund/GMT-plotting/tree/master/002_map_equidist_EQ_GCMT): plotting focal mechanisms ("beach balls") of the global seismicity between 1964 and 2019 on equidistant map
@@ -21,30 +21,76 @@ Some directories include [Jupyter Notebooks](https://jupyter.org/) in which I us
 - [010_paper_RFSG2022](https://github.com/michaelgrund/GMT-plotting/tree/master/010_paper_RFSG2022): :arrow_forward: Jupyter Notebook to reproduce figure 1 presented in our paper [**_Ritter, Fröhlich, Sanz Alonso & Grund (2022)_**](https://doi.org/10.1007/s10950-022-10112-w) Journal of Seismology
 
 ---
+Although I now work outside academia as data scientist, I provide these PyGMT/GMT examples and notebooks in the hope that they will be useful for other students, scientists or interested hobbyist map creators. Some new content may come up in the near future. Stay tuned!
 
-If you make use of the content in this repository please acknowledge GMT (e.g. [**_Wessel et al., 2013_**](https://doi.org/10.1002/2013EO450001); [**_2019_**](https://doi.org/10.1029/2019GC008515)), PyGMT ([**_Tian et al., 2025_**](https://zenodo.org/records/15628725)), our published papers and/or my PhD thesis in whose framework several of the scripts and notebooks were developed:
-
-- **_Ritter, J.R.R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)_**, Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures, Journal of Seismology, 26, 1137-1156, https://doi.org/10.1007/s10950-022-10112-w.
-
-- **_Grund, M. & Ritter, J.R.R. (2020)_**, Shear-wave splitting beneath Fennoscandia - Evidence for dipping structures and laterally varying multilayer anisotropy, Geophysical Journal International, 223, 1525–1547, https://doi.org/10.1093/gji/ggaa388.
-
-- **_Grund, M. & Ritter, J.R.R. (2019)_**, Widespread seismic anisotropy in Earth’s lowermost mantle beneath the Atlantic and Siberia, Geology, 47(2), 123–126, 
-https://doi.org/10.1130/G45514.1.
-
-- **_Grund, M. (2019)_**, Exploring geodynamics at different depths with shear wave splitting, Dissertation, Karlsruhe Institute of Technology (KIT), https://doi.org/10.5445/IR/1000091425. 
+<table>
+  <thead>
+    <tr>
+      <th colspan="4">Click on the images to directly access the corresponding Jupyter Notebooks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/006_map_SKS_SKKS_areas/pygmt_jupyter_notebook/pygmt_SKS_SKKS_areas.ipynb" target="_blank">
+          <img src="https://github.com/michaelgrund/GMT-plotting/blob/main/006_map_SKS_SKKS_areas/pygmt_jupyter_notebook/PLOT_sks_skks_areas.png" width="400">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/001_map_equidist_EQ/pygmt_jupyter_notebook/pygmt_plot_equidist_EQs.ipynb" target="_blank">
+          <img src="https://github.com/michaelgrund/GMT-plotting/blob/main/001_map_equidist_EQ/pygmt_jupyter_notebook/PLOT_EQglob_BFO.png" width="300">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/008_map_scan_tectonic/pygmt_jupyter_notebook/pygmt_map_tectonic_fenno.ipynb" target="_blank">
+          <img src="https://github.com/michaelgrund/GMT-plotting/blob/main/008_map_scan_tectonic/pygmt_jupyter_notebook/PLOT_map_Fenno.png" width="300">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/009_paper_GR2020/pygmt_jn_fig_s8/GR_2020_Fig_S8.ipynb" target="_blank">
+          <img src="https://raw.githubusercontent.com/michaelgrund/GMT-plotting/main/009_paper_GR2020/pygmt_jn_fig_s8/PLOT_figs8.png" width="400">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/003_map_seafloor_ages/pygmt_jupyter_notebook/pygmt_seafloor_ages.ipynb" target="_blank">
+          <img src="https://github.com/michaelgrund/GMT-plotting/blob/main/003_map_seafloor_ages/pygmt_jupyter_notebook/PLOT_sf_ages.png" width="400">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/010_paper_RFSG2022/RFSG_2022_Fig_01.ipynb" target="_blank">
+          <img src="https://github.com/michaelgrund/GMT-plotting/blob/main/010_paper_RFSG2022/PLOT_fig01_map_URG.png" width="350">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/009_paper_GR2020/pygmt_jn_fig_s18/GR_2020_Fig_S18.ipynb" target="_blank">
+          <img src="https://raw.githubusercontent.com/michaelgrund/GMT-plotting/main/009_paper_GR2020/pygmt_jn_fig_s18/PLOT_figS18.png" width="300">
+        </a>
+      </td>
+      <td>
+        <a href="https://github.com/michaelgrund/GMT-plotting/blob/main/009_paper_GR2020/pygmt_jn_fig_14/GR_2020_Fig_14.ipynb" target="_blank">
+          <img src="https://raw.githubusercontent.com/michaelgrund/GMT-plotting/main/009_paper_GR2020/pygmt_jn_fig_14/PLOT_fig14.png" width="350">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
-**Although I now work outside of academia as a data scientist, I provide these GMT/PyGMT examples and notebooks in the hope that they will be useful for other students, scientists or interested map creators.** 
+If you make use of the content in this repository please acknowledge GMT (e.g. [**_Wessel et al., 2013_**](https://doi.org/10.1002/2013EO450001); [**_2019_**](https://doi.org/10.1029/2019GC008515)), PyGMT ([**_Tian et al., 2025_**](https://zenodo.org/records/15628725)), our published papers and/or my PhD thesis in whose framework several of the scripts and notebooks were developed:
 
-Final figure outputs of a few examples are shown below. Details and further references can be found in the individual directories. 
-
-![PLOT_GMT_all](https://user-images.githubusercontent.com/23025878/59599891-f439ce00-90ff-11e9-82be-5e324fbcc893.png)
+- **_Ritter, J.R.R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)_**, Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures, *Journal of Seismology*, 26, 1137-1156, https://doi.org/10.1007/s10950-022-10112-w.
+- **_Grund, M. & Ritter, J.R.R. (2020)_**, Shear-wave splitting beneath Fennoscandia - Evidence for dipping structures and laterally varying multilayer anisotropy, *Geophysical Journal International*, 223, 1525–1547, https://doi.org/10.1093/gji/ggaa388.
+- **_Grund, M. & Ritter, J.R.R. (2019)_**, Widespread seismic anisotropy in Earth’s lowermost mantle beneath the Atlantic and Siberia, *Geology*, 47(2), 123–126, 
+https://doi.org/10.1130/G45514.1.
+- **_Grund, M. (2019)_**, Exploring geodynamics at different depths with shear wave splitting, Dissertation, *Karlsruhe Institute of Technology (KIT)*, https://doi.org/10.5445/IR/1000091425. 
 
 ---
 
 ### References
 
-- **_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Jing-Hui, T., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2025)_**, PyGMT: A Python interface for the Generic Mapping Tools, v0.16.0, Zenodo, https://zenodo.org/records/15628725.
-- **_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**, The generic mapping tools version 6. Geochemistry, Geophysics, Geosystems, 20(11), 5556-5564, https://doi.org/10.1029/2019GC008515.
-- **_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)_**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410, https://doi.org/10.1002/2013EO450001.
+- **_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Jing-Hui, T., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2025)_**, PyGMT: A Python interface for the Generic Mapping Tools, v0.16.0, *Zenodo*, https://zenodo.org/records/15628725.
+- **_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**, The generic mapping tools version 6. *Geochemistry, Geophysics, Geosystems*, 20(11), 5556-5564, https://doi.org/10.1029/2019GC008515.
+- **_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)_**, Generic mapping tools: improved version released. *Eos, Transactions American Geophysical Union*, 94(45), 409-410, https://doi.org/10.1002/2013EO450001.
