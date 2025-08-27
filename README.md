@@ -91,6 +91,6 @@ https://doi.org/10.1130/G45514.1.
 
 ### References
 
-- **_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Jing-Hui, T., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2025)_**, PyGMT: A Python interface for the Generic Mapping Tools, v0.16.0, Zenodo, https://zenodo.org/records/15628725.
-- **_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**, The generic mapping tools version 6. Geochemistry, Geophysics, Geosystems, 20(11), 5556-5564, https://doi.org/10.1029/2019GC008515.
-- **_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)_**, Generic mapping tools: improved version released. Eos, Transactions American Geophysical Union, 94(45), 409-410, https://doi.org/10.1002/2013EO450001.
+- **_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Jing-Hui, T., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2025)_**, PyGMT: A Python interface for the Generic Mapping Tools, v0.16.0, *Zenodo*, https://zenodo.org/records/15628725.
+- **_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**, The generic mapping tools version 6. *Geochemistry, Geophysics, Geosystems*, 20(11), 5556-5564, https://doi.org/10.1029/2019GC008515.
+- **_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013)_**, Generic mapping tools: improved version released. *Eos, Transactions American Geophysical Union*, 94(45), 409-410, https://doi.org/10.1002/2013EO450001.
