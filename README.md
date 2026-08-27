@@ -1,6 +1,8 @@
 # GMT-plotting
 > [!NOTE]  
-> Updates for PyGMT based notebooks are carried out at irregular intervals (currently v0.19.0 is supported). The GMT bash scripts are not maintained anymore.
+> Updates for PyGMT based notebooks are carried out at irregular intervals (currently **v0.19.0** is supported).
+>
+> **The GMT bash scripts are not maintained anymore!**
 > 
 > Did you find a bug or have suggestions for improvements? Simply open a new [issue](https://github.com/michaelgrund/GMT-plotting/issues) or [pull request](https://github.com/michaelgrund/GMT-plotting/pulls).
 
